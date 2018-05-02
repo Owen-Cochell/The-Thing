@@ -21,7 +21,7 @@ def boot(suc):
     time.sleep(1)
     return
 
-def auth():
+def auth(authe, tec, pio, wep, bio, tecp, piop, wepp, biop, usern, passw):
     #authentication backend
     if usern==tec and passw==tecp:
         return authe=True
