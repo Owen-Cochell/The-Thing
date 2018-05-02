@@ -1,7 +1,8 @@
 #This file is where all code will be executed
 import time
-import animate.py as ani
+from animate import *
 #Code for passwords here
+suc='#Success!'
 authe=False
 interm=True
 on=True
@@ -14,7 +15,7 @@ bio='Blair'
 
 while on==True:
     #Boot up procedure
-    boot()
+    boot(suc)
     #Check to see which version to boot
     if norm==True:    
         #Usernames and passwords
@@ -23,7 +24,7 @@ while on==True:
             print("Please login:")
             usern=input("Username:")
             passw=input("Password:")
-            auth(authe, tec, pio, wep, bio, tecp, piop, wepp, biop)
+            auth(authe, tec, pio, wep, bio, tecp, piop, wepp, biop, usern, passw)
             if authe==False:
                 print("Error: \n #Incorect username/Password!")
             if authe==True:
