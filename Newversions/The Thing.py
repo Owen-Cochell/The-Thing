@@ -35,7 +35,7 @@ while on==True:
     #Code for Terminal welcome screen
     startt(usern)
     while interm==True:
-        inp=input("C:\Users\%s>>>")(usern)
+        inp=input("C:\Users\%s>>>" % usern)
         if inp=='help':
             help(usern)
         if inp=='logout':
