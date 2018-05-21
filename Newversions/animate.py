@@ -116,8 +116,26 @@ def logout(suc):
     print("(END LOGOUT.SH)")
     return
 
-          
-          
+def files(suc):
+    print("############################################")
+    print("                FROM .BASH                 ")
+    print("Starting...")
+    print("Acessing harddrive...")
+    print("#Testing READ")
+    time.sleep(1)
+    print("Testing WRITE")
+    time.sleep(2)
+    print(suc)
+    print("############################################")
+    print("(END FILE.SH)")
+    time.sleep(1)
+    return
     
-         
-    
+def file():
+    print("###########################################")
+    print("File Manager System ver. 1.74.52")
+    print("@1987 All rights reserved ENTech LLC.\n")
+    print("Welcome to File Manager!")
+    print("Below are files that can be veiwed. Enter the file number to view it.")
+    print("'.txt' files can be veiwed, but '.enc' are encrypted and can't be viewed without decrypting them first\n")
+    return
