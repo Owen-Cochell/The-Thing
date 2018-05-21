@@ -25,12 +25,13 @@ while on==True:
             usern=input("Username:")
             passw=input("Password:")
             auth(authe, tec, pio, wep, bio, tecp, piop, wepp, biop, usern, passw)
+            authe=auth(authe, tec, pio, wep, bio, tecp, piop, wepp, biop, usern, passw)
             if authe==False:
-                print("Error: \n #Incorect username/Password!")
+                print("Error: \n#Incorect username/Password!")
             if authe==True:
                 break
     #Login procedure
-    login()
+    login(suc)
     #Code for Terminal welcome screen
     startt(usern)
     while interm==True:
@@ -39,6 +40,5 @@ while on==True:
             help(usern)
         if inp=='logout':
             print("Starting 'LOGOUT.SH(C:\SYS\ACCOUNT)'...")
-            logout()
-    
+            logout(suc)
     
