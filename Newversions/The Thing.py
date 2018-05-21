@@ -4,7 +4,7 @@ from animate import *
 #Code for passwords here
 suc='#Success!'
 authe=False
-interm=True
+interm=False
 on=True
 norm=True
 temp=20
@@ -32,6 +32,7 @@ while on==True:
                 break
     #Login procedure
     login(suc)
+    interm=True
     #Code for Terminal welcome screen
     startt(usern)
     while interm==True:
@@ -40,5 +41,20 @@ while on==True:
             help(usern)
         if inp=='logout':
             print("Starting 'LOGOUT.SH(C:\SYS\ACCOUNT)'...")
+            time.sleep(1)
+            interm=False
+            authe=False
             logout(suc)
+        if inp=='file':
+            print("Starting 'FILE.SH(C:\SYS\FILEMAN)'...")
+            time.sleep(1)
+            files(suc)
+            file()
+            print("No files yet at this time")
+            fileinp=("Please enter a file number here:")
+        if inp=='radio':
+            print("This feature is not yet implemented.")
+        if inp=='gen_config':
+            print("This feature is not yet implemented.")
+            
     
