@@ -56,5 +56,20 @@ while on==True:
             print("This feature is not yet implemented.")
         if inp=='gen_config':
             print("This feature is not yet implemented.")
+        if inp=='info':
+            print("This feature is not yet implemented.")
+        if inp=='clear':
+            print("This feature is not yet implemented.")
+        if inp=='lockdown':
+            print("This feature is not yet implemented.")
+        if inp=='lockdown_int':
+            print("This feature is not yet implemented.")
+        if inp=='lockdown_dis':
+            print("This feature is not yet implemented.")
+        if inp=='fridge_config':
+            print("This feature is not yet implemented.")
+        else:
+            print("Error:\n#'%s' is not a valid command!" % inp)
+                  
             
     
