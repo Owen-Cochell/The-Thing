@@ -139,3 +139,7 @@ def file():
     print("Below are files that can be veiwed. Enter the file number to view it.")
     print("'.txt' files can be veiwed, but '.enc' are encrypted and can't be viewed without decrypting them first\n")
     return
+
+def terror(inp):
+    print("Error:\n#'%s' is not a valid command!" % inp)
+    return
