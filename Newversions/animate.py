@@ -1,5 +1,6 @@
 #This module has the animations and cutscenes inside
 import time
+import os
 suc='#Success!'
 def boot(suc):
     #Code for boot up procedure
@@ -143,3 +144,121 @@ def file():
 def terror(inp):
     print("Error:\n#'%s' is not a valid command!" % inp)
     return
+
+def lockinfo():
+    print("###########################################")
+    print("Lockdown Help:")
+    print("Command "lockdown" alows you to initilaise/deactivate a system lockdown.\n")
+    print("Type "lockdown_int" to activate the lockdown sequence.\n")
+    print("Type "lockdown_dis" to deactivate a current lockdown.\n")
+    print("Type "lockdown" to see this page.\n")
+    print("###########################################")
+    print("What is a lockdown?:")
+    print("If you activate a system lockdown, all electrical or computerised systems will be put into lockdown")
+    print("This means mechanical doors, terminals, radio, ect.")
+    print("###########################################")
+    print("What do I need to do?:")
+    print("Activating a lockdown will prompt you for a password, and conformation.")
+    print("PLEASE KEEP THIS PASSWORD AS THE ONLY OTHER WAY TO LIFT A LOCKDOWN IS TO ENTER SECURITY OVERIDE PASSWORD")
+    print("The system will reboot, and it will promt you with a password screen to lift the system lockdown.")
+    print("###########################################")
+    print("How do I deactivate a lockdown?:")
+    print("To deactivate a lockdown, enter the password you have set, or enter the security overide password.")
+    print("If you enter the security overide password, then you will be logged into the security administrators account.")
+    print("If you enter the set password, the security lockdown will be deactivated.")
+    print("###########################################")
+    return
+
+def lockcon(lockpass, lockconf):
+    print("###########################################")
+    print("ATTENTION:")
+    print("Activating lockdown means access to electrical or computerised systems will be revoked")
+    print("The only way to lift a lockdown is to enter password, or security overide password\n")
+    print("Please set your security lockdown password below.")
+    print("(REMEMBER THIS!!)")
+    lockpass=input("Password:")
+    print("\nAre you sure?")
+    lockconfd=input("(Y/N):")
+    if lockconf=='Y' or 'yes' or 'y':
+        lockconf=True
+        return lockconf lockpass
+    if lockconf=='N' or 'n' or 'no':
+        return
+
+def lockint(suc):
+    print("############################################")
+    print("                FROM .BASH")
+    print("Starting...")
+    time.sleep(2)
+    print("Accessing hardrive...")
+    time.sleep(2)
+    print(suc)
+    print("Initiating lockdown...")
+    print("#Editing boot files...")
+    time.sleep(2)
+    print("#Placing account safeguards...")
+    time.sleep(3)
+    print("#Sending 'LOCKDOWN' signal to all machinery...")
+    time.sleep(4)
+    print("#Changing settings...")
+    time.sleep(2)
+    print(suc)
+    print("Encrypting filesystem(this will take awile)...")
+    print("#0%")
+    time.sleep(2)
+    print("#10%")
+    time.sleep(3)
+    print("#20%")
+    time.sleep(1)
+    print("#30%")
+    time.sleep(4)
+    print("#40%")
+    time.sleep(1)
+    print("#50%")
+    time.sleep(1)
+    print("#60%")
+    time.sleep(5)
+    print("#70%")
+    time.sleep(2)
+    print("#80%")
+    time.sleep(3)
+    print("#90%")
+    time.sleep(4)
+    print("#100%")
+    print(suc)
+    print("Complete. The system will now reboot.")
+    time.sleep(2)
+    print("############################################")
+    print("(END LOCKDOWN.SH)")
+    return
+
+def lockout():
+    print("    ___ ")  
+    print(" .'/   \ ") 
+    print("  / /     \ ")
+    print("^| ^|     ^| ")
+    print("^| ^|     ^| ") 
+    print("^|/`.   .' ")
+    print("  `.^|   ^|  ")
+    print("  ^|^|___^|  ")
+    print("  ^|/___/  ")
+    print("  .'.--.  ")
+    print(" ^| ^|    ^| ")
+    print(" \_\    / ")
+    print("  `''--'  ")
+    print(" ")
+    print("Attention:\n")
+    print("A system lockdown has been initiated by your security administrator.")
+    print("All electrical and computerised equipment are now in lockdown, and are now inaccessable.")
+    print("Please contact your security administrator for more info.\n")
+    return
+
+def lerror(lockinp):
+    print("Error:\n#Incorrect password.\n#Please contact your security administrator for more info.")
+    x=input("Press any key to continue...")
+    return
+
+def clear():
+    os.system('cls' if os.name == 'nt' else 'clear')
+    return
+
