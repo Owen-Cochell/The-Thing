@@ -69,7 +69,7 @@ while on==True:
         if inp=='fridge_config':
             print("This feature is not yet implemented.")
         else:
-            print("Error:\n#'%s' is not a valid command!" % inp)
+            terror(inp)
                   
             
     
