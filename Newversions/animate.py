@@ -65,7 +65,7 @@ def startt(usern):
     print("O.I.M Terminal Interface System ver 3.1.74")
     print("@1987 All rights reserved ENTech LLC.")
     print(" ")
-    print("Welcome user %s!")(usern)
+    print("Welcome user %s!" % usern)
     print("Type 'help' for a list of commands")
     return
 
