@@ -45,7 +45,7 @@ def login(suc):
     time.sleep(1)
     print("#Testing 'READ'")      
     time.sleep(1)
-    print("Testing 'WRITE'")
+    print("#Testing 'WRITE'")
     time.sleep(1)
     print(suc)
     print("Accessing 'USERS.SH'(C:\SYS\USR)")
