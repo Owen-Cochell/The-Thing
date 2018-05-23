@@ -8,7 +8,7 @@ authe=False
 interm=False
 on=True
 norm=True
-lockcon=False
+lockconf=False
 lockpass='test123'
 temp=20
 tec='Windows'
@@ -103,7 +103,7 @@ while on==True:
         if inp=='lockdown_int':
             print("This feature is currently in development")
             if usern==wep:
-                lockcon()
+                lockcon(lockpass, lockconf)
                 lockpass=lockcon(lockpass, lockconf)
                 lockconf=lockcon(lockpass, lockconf)
                 if lockconf==True:
