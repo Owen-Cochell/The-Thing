@@ -68,7 +68,7 @@ while on==True:
     while interm==True:
         inp=input("C:\Users\%s>>>" % usern)
         if inp=='help':
-            help(usern)
+            help(usern, wep, pio, bio, tec)
         if inp=='logout':
             print("Starting 'LOGOUT.SH(C:\SYS\ACCOUNT)'...")
             time.sleep(1)
