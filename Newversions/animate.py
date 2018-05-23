@@ -185,7 +185,7 @@ def lockcon(lockpass, lockconf):
     lockconfd=input("(Y/N):")
     if lockconf=='Y' or 'yes' or 'y':
         lockconf=True
-        return lockconf lockpass
+        return lockconf, lockpass
     if lockconf=='N' or 'n' or 'no':
         return
 
