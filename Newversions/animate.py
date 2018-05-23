@@ -25,13 +25,17 @@ def boot(suc):
 def auth(authe, tec, pio, wep, bio, tecp, piop, wepp, biop, usern, passw):
     #authentication backend
     if usern==tec and passw==tecp:
-        return authe=True
+        authe=True
+        return authe
     if usern==pio and passw==piop:
-        return authe=True
+        authe=True
+        return authe
     if usern==wep and passw==wepp:
-        return authe=True
+        authe=True
+        return authe
     if usern==bio and passw==biop:
-        return authe=True
+        authe=True
+        return authe
 
 def login(suc):
     #Code for starting terminal
