@@ -69,7 +69,7 @@ def startt(usern):
     print("Type 'help' for a list of commands")
     return
 
-def help(usern):
+def help(usern, wep, pio, bio, tec):
     #Code for help command
     print("#####################################")
     print("List of commands:")
