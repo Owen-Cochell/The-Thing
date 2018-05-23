@@ -81,6 +81,7 @@ while on==True:
             time.sleep(1)
             clear()
             files(suc)
+            clear()
             file()
             print("No files yet at this time")
             fileinp=("Please enter a file number here:")
