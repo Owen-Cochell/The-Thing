@@ -258,6 +258,58 @@ def lerror(lockinp):
     x=input("Press any key to continue...")
     return
 
+def lockconf2():
+    print("Are you sure you want to disable lockdown?")
+    return
+
+def lockdis(suc):
+    print("############################################")
+    print("                FROM .BASH")
+    print("Starting...")
+    time.sleep(2)
+    print("Accessing hardrive...")
+    time.sleep(2)
+    print(suc)
+    print("Disabling lockdown...")
+    print("#Editing boot files...")
+    time.sleep(1)
+    print("#Removing account safeguards...")
+    time.sleep(3)
+    print("#Sending 'DIS_LOCKDOWN' signal to all machinery...")
+    time.sleep(4)
+    print("#Changing settings...")
+    time.sleep(2)
+    print(suc)
+    print("De-crypting filesystem(this will take awile)...")
+    print("#0%")
+    time.sleep(2)
+    print("#10%")
+    time.sleep(3)
+    print("#20%")
+    time.sleep(1)
+    print("#30%")
+    time.sleep(4)
+    print("#40%")
+    time.sleep(1)
+    print("#50%")
+    time.sleep(1)
+    print("#60%")
+    time.sleep(5)
+    print("#70%")
+    time.sleep(2)
+    print("#80%")
+    time.sleep(3)
+    print("#90%")
+    time.sleep(4)
+    print("#100%")
+    print(suc)
+    print("Complete. The system will now reboot.")
+    time.sleep(2)
+    print("############################################")
+    print("(END LOCKDOWN_DIS.SH)")
+    time.sleep(1)
+    return
+
 def clear():
     os.system('cls' if os.name == 'nt' else 'clear')
     return
