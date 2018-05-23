@@ -128,7 +128,7 @@ def files(suc):
     print("Acessing harddrive...")
     print("#Testing READ")
     time.sleep(1)
-    print("Testing WRITE")
+    print("#Testing WRITE")
     time.sleep(2)
     print(suc)
     print("############################################")
