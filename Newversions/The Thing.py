@@ -27,7 +27,15 @@ while on==True:
             lockout()
             lockinp=input("Please enter password or security overide code:")
             if lockinp==lockpass:
-                p
+                lockconf2()
+                lockconf2==input("(Y/N):")
+                if lockcon2=='Y' or 'y' or 'yes':
+                    print("Starting 'LOCKDOWN_DIS.SH(C:\SYS\SECURITY')...")
+                    time.sleep(1)
+                    lockdis(suc)
+                    p
+                if lockcon2=='N' or 'n' or 'no':
+                    continue
             if lockinp==wepp:
                 p
             else:
