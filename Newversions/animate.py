@@ -82,7 +82,7 @@ def help(usern, wep, pio, bio, tec):
     print("'info' to see info on account")
     print("'clear' clears the terminal screen")
     if usern==wep:
-        print("'lockdown[int][dec]' to initiate/deactivate security lockdown. Type 'lockdown' for more info")
+        print("'lockdown_int' to initiate a security lockdown. Type 'lockdown' for more info")
         print(" ")
         print("####################################")
         return
@@ -154,7 +154,6 @@ def lockinfo():
     print("Lockdown Help:")
     print("Command 'lockdown' alows you to initilaise/deactivate a system lockdown.\n")
     print("Type 'lockdown_int' to activate the lockdown sequence.\n")
-    print("Type 'lockdown_dis' to deactivate a current lockdown.\n")
     print("Type 'lockdown' to see this page.\n")
     print("###########################################")
     print("What is a lockdown?:")
@@ -168,7 +167,7 @@ def lockinfo():
     print("###########################################")
     print("How do I deactivate a lockdown?:")
     print("To deactivate a lockdown, enter the password you have set, or enter the security overide password.")
-    print("If you enter the security overide password, then you will be logged into the security administrators account.")
+    print("If you enter the security overide password, then you will be able to deactivate the security lockdown.")
     print("If you enter the set password, the security lockdown will be deactivated.")
     print("###########################################")
     return
@@ -177,7 +176,7 @@ def lockcon(lockpass, lockconf):
     print("###########################################")
     print("ATTENTION:")
     print("Activating lockdown means access to electrical or computerised systems will be revoked")
-    print("The only way to lift a lockdown is to enter password, or security overide password\n")
+    print("The only way to lift a lockdown is to enter set password, or security overide password\n")
     print("Please set your security lockdown password below.")
     print("(REMEMBER THIS!!)")
     lockpass=input("Password:")
