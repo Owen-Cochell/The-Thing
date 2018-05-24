@@ -33,11 +33,25 @@ while on==True:
                     print("Starting 'LOCKDOWN_DIS.SH(C:\SYS\SECURITY')...")
                     time.sleep(1)
                     lockdis(suc)
-                    p
+                    norm=True
+                    lockconf=False
+                    lockpass='test123'
+                    continue
                 if lockcon2=='N' or 'n' or 'no':
                     continue
             if lockinp==wepp:
-                p
+                lockconf2()
+                lockconf2==input("(Y/N):")
+                if lockconf2=='Y' or 'y' or 'yes':
+                    print("Starting 'LOCKDOWN_DIS.SH(C:\SYS\SECURITY')...")
+                    time.sleep(1)
+                    lockdis(suc)
+                    norm=True
+                    lockconf=False
+                    lockpass='test123'
+                    continue
+                if lockcon2=='N' or 'n' or 'no':
+                    continue
             else:
                 clear()
                 lerror(lockinp)
@@ -120,8 +134,6 @@ while on==True:
             else:
                 terror(inp)
                 continue
-        if inp=='lockdown_dis':
-            print("This feature is not yet implemented.")
         if inp=='fridge_config':
             print("This feature is not yet implemented.")
         else:
