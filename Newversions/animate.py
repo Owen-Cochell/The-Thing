@@ -210,11 +210,12 @@ def lockcon(lockpass, lockconf):
     lockpass=input("Password:")
     print("\nAre you sure?")
     lockconfd=input("(Y/N):")
-    if lockconf=='Y' or 'yes' or 'y':
+    if lockconfd=='Y' or 'yes' or 'y':
         lockconf=True
         return lockconf, lockpass
-    if lockconf=='N' or 'n' or 'no':
-        return
+    if lockconfd=='N' or 'n' or 'no':
+        lockconf=False
+        return lockconf
 
 def lockint(suc):
     print("############################################")
