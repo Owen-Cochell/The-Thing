@@ -150,30 +150,22 @@ def uinfo(usern, logg):
     print("Username: %s" % usern)
     if usern==wep:
         role='Security Administrator'
-        continue
     if usern==bio:
         role='Biologist'
-        continue
     if usern==pio:
         role='Pilot'
-        continue
     if usern==tec:
         role='System Administrator'
-        continue
     print("Role: %s" % role)
     print("System Version: 1.73.48")
     if usern==wep:
         logt='10/28/1986'
-        continue
     if usern==bio:
         logt='10/29/1986'
-        continue
     if usern==pio:
         logt='6/14/1986'
-        continue
     if usern==tec:
         logt='10/29/1986'
-        continue
     print("Last Login: %s" % logt)
     print("System Managment: United States Research Division")
     if logg==True:
