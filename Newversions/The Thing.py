@@ -86,6 +86,7 @@ while on==True:
         inp=input("C:\Users\%s>>>" % usern)
         if inp=='help':
             help(usern, wep, pio, bio, tec)
+            continue
         if inp=='logout':
             print("Starting 'LOGOUT.SH(C:/SYS/ACCOUNT)'...")
             time.sleep(1)
@@ -93,6 +94,7 @@ while on==True:
             authe=False
             clear()
             logout(suc)
+            continue
         if inp=='file':
             print("Starting 'FILE.SH(C:/SYS/FILEMAN)'...")
             time.sleep(1)
@@ -102,16 +104,20 @@ while on==True:
             file()
             print("No files yet at this time")
             fileinp=("Please enter a file number here:")
+            continue
         if inp=='radio':
             print("This feature is not yet implemented.")
+            continue
         if inp=='gen_config':
             print("This feature is not yet implemented.")
+            continue
         if inp=='info':
             print("This feature is under development.")
             uinfo(usern, logg, tec, bio, pio, wep)
             continue
         if inp=='clear':
             clear()
+            continue
         if inp=='lockdown':
             if usern==wep:
                 lockinfo()
@@ -141,6 +147,7 @@ while on==True:
                 continue
         if inp=='fridge_config':
             print("This feature is not yet implemented.")
+            continue
         else:
             terror(inp)
                   
