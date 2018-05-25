@@ -31,7 +31,7 @@ while on==True:
                 lockconf2()
                 lockconf2==input("(Y/N):")
                 if lockconf2=='Y' or 'y' or 'yes':
-                    print("Starting 'LOCKDOWN_DIS.SH(C:\SYS\SECURITY')...")
+                    print("Starting 'LOCKDOWN_DIS.SH(C:/SYS/SECURITY')...")
                     time.sleep(1)
                     clear()
                     lockdis(suc)
@@ -45,7 +45,7 @@ while on==True:
                 lockconf2()
                 lockconf2==input("(Y/N):")
                 if lockconf2=='Y' or 'y' or 'yes':
-                    print("Starting 'LOCKDOWN_DIS.SH(C:\SYS\SECURITY')...")
+                    print("Starting 'LOCKDOWN_DIS.SH(C:/SYS/SECURITY')...")
                     time.sleep(1)
                     clear()
                     lockdis(suc)
@@ -87,14 +87,14 @@ while on==True:
         if inp=='help':
             help(usern, wep, pio, bio, tec)
         if inp=='logout':
-            print("Starting 'LOGOUT.SH(C:\SYS\ACCOUNT)'...")
+            print("Starting 'LOGOUT.SH(C:/SYS/ACCOUNT)'...")
             time.sleep(1)
             interm=False
             authe=False
             clear()
             logout(suc)
         if inp=='file':
-            print("Starting 'FILE.SH(C:\SYS\FILEMAN)'...")
+            print("Starting 'FILE.SH(C:/SYS/FILEMAN)'...")
             time.sleep(1)
             clear()
             files(suc)
@@ -108,7 +108,7 @@ while on==True:
             print("This feature is not yet implemented.")
         if inp=='info':
             print("This feature is under development.")
-            uinfo(usern, logg)
+            uinfo(usern, logg, tec, bio, pio, wep)
             continue
         if inp=='clear':
             clear()
@@ -126,7 +126,7 @@ while on==True:
                 lockpass=lockcon(lockpass, lockconf)
                 lockconf=lockcon(lockpass, lockconf)
                 if lockconf==True:
-                    print("Starting 'LOCKDOWN.SH(C:\SYS\SECURITY)'...")
+                    print("Starting 'LOCKDOWN.SH(C:/SYS/SECURITY)'...")
                     time.sleep(1)
                     clear()
                     lockint(suc)
