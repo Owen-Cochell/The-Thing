@@ -48,7 +48,7 @@ def login(suc):
     print("#Testing 'WRITE'")
     time.sleep(1)
     print(suc)
-    print("Accessing 'USERS.SH'(C:\SYS\USR)")
+    print("Accessing 'USERS.SH'(C:/SYS/USR)")
     time.sleep(2)
     print(suc)
     print("Finalising...")
@@ -114,7 +114,7 @@ def logout(suc):
     print("#Clearing user data...")
     time.sleep(1)
     print(suc)
-    print("Loading LOGINSCREEN.SH(C:\SYS\ACCOUNT)")
+    print("Loading LOGINSCREEN.SH(C:/SYS/ACCOUNT)")
     time.sleep(2)
     print(suc)
     print("#############################################")
@@ -145,7 +145,7 @@ def file():
     print("'.txt' files can be veiwed, but '.enc' are encrypted and can't be viewed without decrypting them first\n")
     return
 
-def uinfo(usern, logg):
+def uinfo(usern, logg, tec, bio, pio, wep):
     print("#####################################")
     print("Username: %s" % usern)
     if usern==wep:
