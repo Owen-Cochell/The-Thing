@@ -10,6 +10,7 @@ on=True
 norm=True
 lockconf=False
 lockpass='test123'
+logg=False
 temp=20
 tec='Windows'
 pio='Mcrege'
@@ -22,22 +23,23 @@ while on==True:
     boot(suc)
     #Check to see which version to boot
     if norm==False:
-        if lockcon==True:
+        while lockcon==True:
             clear()
             lockout()
             lockinp=input("Please enter password or security overide code:")
             if lockinp==lockpass:
                 lockconf2()
                 lockconf2==input("(Y/N):")
-                if lockcon2=='Y' or 'y' or 'yes':
+                if lockconf2=='Y' or 'y' or 'yes':
                     print("Starting 'LOCKDOWN_DIS.SH(C:\SYS\SECURITY')...")
                     time.sleep(1)
+                    clear()
                     lockdis(suc)
                     norm=True
                     lockconf=False
                     lockpass='test123'
                     continue
-                if lockcon2=='N' or 'n' or 'no':
+                if lockconf2=='N' or 'n' or 'no':
                     continue
             if lockinp==wepp:
                 lockconf2()
@@ -45,6 +47,7 @@ while on==True:
                 if lockconf2=='Y' or 'y' or 'yes':
                     print("Starting 'LOCKDOWN_DIS.SH(C:\SYS\SECURITY')...")
                     time.sleep(1)
+                    clear()
                     lockdis(suc)
                     norm=True
                     lockconf=False
@@ -104,7 +107,9 @@ while on==True:
         if inp=='gen_config':
             print("This feature is not yet implemented.")
         if inp=='info':
-            print("This feature is not yet implemented.")
+            print("This feature is under development.")
+            uinfo(usern, logg)
+            continue
         if inp=='clear':
             clear()
         if inp=='lockdown':
