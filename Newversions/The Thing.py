@@ -22,15 +22,15 @@ while on==True:
     clear()
     boot(suc)
     #Check to see which version to boot
-    if norm==False:
-        while lockcon==True:
+    while norm==False:
+        while lockconf==True:
             clear()
             lockout()
             lockinp=input("Please enter password or security overide code:")
             if lockinp==lockpass:
                 lockconf2()
                 lockconf2==input("(Y/N):")
-                if lockconf2=='Y' or 'y' or 'yes':
+                if lockconf2 in ('Y', 'y', 'yes'):
                     print("Starting 'LOCKDOWN_DIS.SH(C:/SYS/SECURITY')...")
                     time.sleep(1)
                     clear()
@@ -39,7 +39,7 @@ while on==True:
                     lockconf=False
                     lockpass='test123'
                     continue
-                if lockconf2=='N' or 'n' or 'no':
+                if lockconf2 in ('N', 'n', 'no'):
                     continue
             if lockinp==wepp:
                 lockconf2()
@@ -60,7 +60,7 @@ while on==True:
                 lerror(lockinp)
                 continue
                 
-    if norm==True:    
+    while norm==True:    
         #Usernames and passwords
         while authe==False:
             clear()
@@ -75,81 +75,81 @@ while on==True:
                 print("Error: \n#Incorect username/Password!")
             if authe==True:
                 break
-    #Login procedure
-    clear()
-    login(suc)
-    interm=True
-    #Code for Terminal welcome screen
-    clear()
-    startt(usern)
-    while interm==True:
-        inp=input("C:\Users\%s>>>" % usern)
-        if inp=='help':
-            help(usern, wep, pio, bio, tec)
-            continue
-        if inp=='logout':
-            print("Starting 'LOGOUT.SH(C:/SYS/ACCOUNT)'...")
-            time.sleep(1)
-            interm=False
-            authe=False
-            clear()
-            logout(suc)
-            continue
-        if inp=='file':
-            print("Starting 'FILE.SH(C:/SYS/FILEMAN)'...")
-            time.sleep(1)
-            clear()
-            files(suc)
-            clear()
-            file()
-            print("No files yet at this time")
-            fileinp=("Please enter a file number here:")
-            continue
-        if inp=='radio':
-            print("This feature is not yet implemented.")
-            continue
-        if inp=='gen_config':
-            print("This feature is not yet implemented.")
-            continue
-        if inp=='info':
-            print("This feature is under development.")
-            uinfo(usern, logg, tec, bio, pio, wep)
-            continue
-        if inp=='clear':
-            clear()
-            continue
-        if inp=='lockdown':
-            if usern==wep:
-                lockinfo()
+        #Login procedure
+        clear()
+        login(suc)
+        interm=True
+        #Code for Terminal welcome screen
+        clear()
+        startt(usern)
+        while interm==True:
+            inp=input("C:\Users\%s>>>" % usern)
+            if inp=='help':
+                help(usern, wep, pio, bio, tec)
+                continue
+            if inp=='logout':
+                print("Starting 'LOGOUT.SH(C:/SYS/ACCOUNT)'...")
+                time.sleep(1)
+                interm=False
+                authe=False
+                clear()
+                logout(suc)
+                continue
+            if inp=='file':
+                print("Starting 'FILE.SH(C:/SYS/FILEMAN)'...")
+                time.sleep(1)
+                clear()
+                files(suc)
+                clear()
+                file()
+                print("No files yet at this time")
+                fileinp=("Please enter a file number here:")
+                continue
+            if inp=='radio':
+                print("This feature is not yet implemented.")
+                continue
+            if inp=='gen_config':
+                print("This feature is not yet implemented.")
+                continue
+            if inp=='info':
+                print("This feature is under development.")
+                uinfo(usern, logg, tec, bio, pio, wep)
+                continue
+            if inp=='clear':
+                clear()
+                continue
+            if inp=='lockdown':
+                if usern==wep:
+                    lockinfo()
+                    continue
+                else:
+                    terror(inp)
+                    continue
+            if inp=='lockdown_int':
+                print("This feature is currently in development")
+                if usern==wep:
+                    lockcon(lockpass, lockconf)
+                    lockpass=lockcon(lockpass, lockconf)
+                    lockconf=lockcon(lockpass, lockconf)
+                    if lockconf==True:
+                        print("Starting 'LOCKDOWN.SH(C:/SYS/SECURITY)'...")
+                        time.sleep(1)
+                        clear()
+                        lockint(suc)
+                        norm=False
+                        interm=False
+                        auth=False
+                        continue
+                    if lockconf==False:
+                        continue
+                else:
+                    terror(inp)
+                c   ontinue
+            if inp=='fridge_config':
+                print("This feature is not yet implemented.")
                 continue
             else:
                 terror(inp)
-                continue
-        if inp=='lockdown_int':
-            print("This feature is currently in development")
-            if usern==wep:
-                lockcon(lockpass, lockconf)
-                lockpass=lockcon(lockpass, lockconf)
-                lockconf=lockcon(lockpass, lockconf)
-                if lockconf==True:
-                    print("Starting 'LOCKDOWN.SH(C:/SYS/SECURITY)'...")
-                    time.sleep(1)
-                    clear()
-                    lockint(suc)
-                    norm=False
-                    interm=False
-                    auth=False
-                    continue
-                if lockconf==False:
-                    continue
-            else:
-                terror(inp)
-                continue
-        if inp=='fridge_config':
-            print("This feature is not yet implemented.")
-            continue
-        else:
-            terror(inp)
                   
             
     
