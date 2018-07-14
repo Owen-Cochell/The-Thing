@@ -383,11 +383,11 @@ def biomus(bio):
     print("1. The fair at Sorochyntsi\n2. Samson and Delila Bacchanale")
     musicinp2=input("Select a number:")
     if musicinp2==1:
-        print("Playing 'The fair at Sorochyntsi'...)
+        print("Playing 'The fair at Sorochyntsi'...")
         #code for playing music here
         return
     if musicinp2==2:
-        print("Playing 'Samson and Delila Bacchanale'...)
+        print("Playing 'Samson and Delila Bacchanale'...")
         #Code for playing music here
         return
               
