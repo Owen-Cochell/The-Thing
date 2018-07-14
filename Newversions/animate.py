@@ -36,6 +36,9 @@ def auth(authe, tec, pio, wep, bio, tecp, piop, wepp, biop, usern, passw):
     if usern==bio and passw==biop:
         authe=True
         return authe
+    else:
+        authe=False
+        return authe
 
 def login(suc):
     #Code for starting terminal
