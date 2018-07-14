@@ -83,7 +83,7 @@ while on==True:
         clear()
         startt(usern)
         while interm==True:
-            inp=input("C:\Users\%s>>>" % usern)
+            inp=input("C:/Users/%s>>>" % usern)
             if inp=='help':
                 help(usern, wep, pio, bio, tec)
                 continue
@@ -95,6 +95,22 @@ while on==True:
                 clear()
                 logout(suc)
                 continue
+            if inp=='music':
+                print("Starting 'MUSIC.SH(C:/USR/WINDOWS)'")
+                time.sleep(1)
+                clear()
+                musics(suc)
+                clear()
+                music()
+                musicinp=input("Please select a number:")
+                if musicinp==1:
+                    clear()
+                    tecmus(tec)
+                    continue
+                if musicinp==2:
+                    clear()
+                    biomus(bio)
+                    continue
             if inp=='file':
                 print("Starting 'FILE.SH(C:/SYS/FILEMAN)'...")
                 time.sleep(1)
