@@ -99,9 +99,9 @@ while on==True:
                 print("Starting 'MUSIC.SH(C:/USR/WINDOWS)'")
                 time.sleep(1)
                 clear()
-                musics(suc)
+                musics(suc, tec)
                 clear()
-                music()
+                music(tec, bio, pio, wep)
                 musicinp=input("Please select a number:")
                 if musicinp==1:
                     clear()
