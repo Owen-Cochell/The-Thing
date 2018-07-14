@@ -76,6 +76,7 @@ def help(usern, wep, pio, bio, tec):
     print(" ")
     print("'help' displays this list")
     print("'logout' logs out of user account")
+    print("'music' starts music player")
     print("'file' accesses filesystem")
     print("'radio' opens radio app")
     print("'gen_config' opens generator config menu")
@@ -342,6 +343,54 @@ def lockdis(suc):
     time.sleep(1)
     return
 
+def musics(suc, tec):
+    print("############################################")
+    print("Accessing music player directory(C:/USR/%s/MUSIC_PLAY)..." % tec) 
+    time.sleep(1)
+    print(suc)
+    print("Loading libraries into P.E.E(Protected Execution Environment)...")
+    time.sleep(3)
+    print(suc)
+    print("Finding music directory(C:/USR/%s/MUSIC)..." % tec)
+    time.sleep(2)
+    print(suc)
+    print("############################################")
+    print("(END MUSIC.SH)")
+    return
+    
+def music(tec, bio, pio, wep):
+    print("############################################")
+    print("Music Player Ver. 2.7.5")
+    print("Welcome to the music player fellas.\nThis app was made by %s(you're welcome)\nPeoples songs are seperated by directores.\nJam on boys!" % tec)
+    print("")
+    print("Please select a directory:")
+    print("1.%s's Jams\n2.%s's Bores\n3.%s Songs\n4.%s Songs" % tec,bio,pio,wep)
+    return
+
+def tecmus(tec):
+    print("############################################")
+    print("%s Jams" % tec)
+    print("1.Let's do the time warp again")
+    musicinp2=input("Select a number:")
+    if musicinp2==1:
+        print("Playing 'Lets do the time warp again'...")
+        #Code for playing music here
+        return
+
+def biomus(bio):
+    print("############################################")
+    print("%s Bores" % bio)
+    print("1. The fair at Sorochyntsi\n2. Samson and Delila Bacchanale")
+    musicinp2=input("Select a number:")
+    if musicinp2==1:
+        print("Playing 'The fair at Sorochyntsi'...)
+        #code for playing music here
+        return
+    if musicinp2==2:
+        print("Playing 'Samson and Delila Bacchanale'...)
+        #Code for playing music here
+        return
+              
 def clear():
     os.system('cls' if os.name == 'nt' else 'clear')
     return
