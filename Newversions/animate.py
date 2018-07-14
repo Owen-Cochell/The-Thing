@@ -4,8 +4,8 @@ import os
 suc='#Success!'
 def boot(suc):
     #Code for boot up procedure
-    print("    ____        __                   __     __ __ ___\n              / __ \__  __/ /_____  ____  _____/ /_   / // /^<  /\n             / / / / / / / __/ __ \/ __ \/ ___/ __/  / // /_/ / \n            / /_/ / /_/ / /_/ /_/ / /_/ (__  ) /_   /__  __/ /  \n            \____/\__,_/\__/ .___/\____/____/\__/     /_/ /_/   \n                          /_/     ")                          
-    print("                United States Research Divison    \n                          O.I.M ver. 1.73.48")
+    print("                __         __                   __     __ __  __       \n              / __ \__  __/ /_____  ____  _____/ /_   / // /^/ /\n             / / / / / / / __/ __ \/ __ \/ ___/ __/  / // /_/ / \n            / /_/ / /_/ / /_/ /_/ / /_/ (__  ) /_   /__  __/ /  \n            \____/\____/\__/ .___/\____/____/\__/     /_/ /_/   \n                          /_/     ")                          
+    print("                        United States Research Divison    \n                             O.I.M ver. 1.73.48")
     print("Starting system...")
     time.sleep(3)
     print(suc)
