@@ -38,6 +38,7 @@ while on==True:
                     norm=True
                     lockconf=False
                     lockpass='test123'
+                    authe=False
                     continue
                 if lockconf2 in ('N', 'n', 'no'):
                     continue
