@@ -189,10 +189,11 @@ def lockinfo():
     print("Type 'lockdown' to see this page.\n")
     print("###########################################")
     print("What is a lockdown?:")
-    print("If you activate a system lockdown, all electrical or computerised systems will be put into lockdown")
+    print("If you activate a system lockdown, all electrical and computerised systems will be put into lockdown")
     print("This means mechanical doors, terminals, radio, ect.")
+    print("They will maintain their current configurations, but they can't be changed")
     print("###########################################")
-    print("What do I need to do?:")
+    print("How do I activate a lockdown?:")
     print("Activating a lockdown will prompt you for a password, and conformation.")
     print("PLEASE KEEP THIS PASSWORD AS THE ONLY OTHER WAY TO LIFT A LOCKDOWN IS TO ENTER SECURITY OVERIDE PASSWORD")
     print("The system will reboot, and it will promt you with a password screen to lift the system lockdown.")
@@ -207,7 +208,7 @@ def lockinfo():
 def lockcon(lockpass, lockconf):
     print("###########################################")
     print("ATTENTION:")
-    print("Activating lockdown means access to electrical or computerised systems will be revoked")
+    print("Activating lockdown means access to electrical and computerised systems will be revoked")
     print("The only way to lift a lockdown is to enter set password, or security overide password\n")
     print("Please set your security lockdown password below.")
     print("(REMEMBER THIS!!)")
@@ -348,6 +349,7 @@ def lockdis(suc):
 
 def musics(suc, tec):
     print("############################################")
+    print("                FROM .BASH")
     print("Accessing music player directory(C:/USR/%s/MUSIC_PLAY)..." % tec) 
     time.sleep(1)
     print(suc)
