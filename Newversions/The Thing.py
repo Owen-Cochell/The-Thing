@@ -29,7 +29,7 @@ while on==True:
             lockinp=input("Please enter password or security overide code:")
             if lockinp==lockpass:
                 lockconf2()
-                lockconf2==input("(Y/N):")
+                lockconf2=input("(Y/N):")
                 if lockconf2 in ('Y', 'y', 'yes'):
                     print("Starting 'LOCKDOWN_DIS.SH(C:/SYS/SECURITY')...")
                     time.sleep(1)
@@ -44,7 +44,7 @@ while on==True:
             if lockinp==wepp:
                 lockconf2()
                 lockconf2==input("(Y/N):")
-                if lockconf2=='Y' or 'y' or 'yes':
+                if lockconf2 in ('Y', 'y', 'yes'):
                     print("Starting 'LOCKDOWN_DIS.SH(C:/SYS/SECURITY')...")
                     time.sleep(1)
                     clear()
@@ -53,7 +53,7 @@ while on==True:
                     lockconf=False
                     lockpass='test123'
                     continue
-                if lockcon2=='N' or 'n' or 'no':
+                if lockcon2 in ('N', 'n', 'no'):
                     continue
             else:
                 clear()
