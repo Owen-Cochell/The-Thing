@@ -72,7 +72,7 @@ while on==True:
             authe=auth(authe, tec, pio, wep, bio, tecp, piop, wepp, biop, usern, passw)
             if authe==False:
                 clear()
-                print("Error: \n#Incorect username/Password!")
+                print("Error: \n#Incorect Username/Password!")
             if authe==True:
                 break
         #Login procedure
@@ -160,7 +160,7 @@ while on==True:
                         continue
                 else:
                     terror(inp)
-                c   ontinue
+                continue
             if inp=='fridge_config':
                 print("This feature is not yet implemented.")
                 continue
