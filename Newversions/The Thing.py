@@ -147,6 +147,13 @@ while on==True:
                     lockcon(lockpass, lockconf)
                     lockpass=lockcon(lockpass, lockconf)
                     lockconf=lockcon(lockpass, lockconf)
+                    lockconfd=input("(Y/N):")
+                    if lockconfd in ('Y', 'yes', 'y'):
+                        lockconf=True
+                        return lockconf, lockpass
+                    if lockconfd in ('N', 'n', 'no'):
+                        lockconf=False
+                        return lockconf
                     if lockconf==True:
                         print("Starting 'LOCKDOWN.SH(C:/SYS/SECURITY)'...")
                         time.sleep(1)
