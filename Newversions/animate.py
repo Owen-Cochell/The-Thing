@@ -432,7 +432,7 @@ def piomus(pio):
         print("Invalid option!")
         continue
     
-def wepmus(wep)    
+def wepmus(wep):  
     print("############################################")
     print("{} Music".format(wep))
     print("1. Video Killed the radio star\n2. September\n3. You make my dreams come true\n4. Don't you forget about me\n5. Wild Wild Life\n6. Jump")
