@@ -370,7 +370,7 @@ def tecmus(tec):
     print("%s Jams" % tec)
     print("1.Let's do the time warp again")
     musicinp2=input("Select a number:")
-    if musicinp2==1:
+    if musicinp2=='1':
         print("Playing 'Lets do the time warp again'...")
         time.sleep(2)
         #Code for playing music here
@@ -384,92 +384,89 @@ def biomus(bio):
     print("%s Bores" % bio)
     print("1. The fair at Sorochyntsi\n2. Samson and Delila Bacchanale")
     musicinp2=input("Select a number:")
-    if musicinp2==1:
+    if musicinp2=='1':
         print("Playing 'The fair at Sorochyntsi'...")
         time.sleep(2)
         #code for playing music here
         return
-    if musicinp2==2:
+    if musicinp2=='2':
         print("Playing 'Samson and Delila Bacchanale'...")
         time.sleep(2)
         #Code for playing music here
         return
     else:
         print("Invalid option!")
-        continue
     
 def piomus(pio):
     print("############################################")
     print("%s Music" % pio)
     print("1. Jailhouse Rock\n2. If you leave me now\n3. Messaround\n4. Anything goes\n5. Orange sky")
     musicinp2=input("Select a number:")
-    if musicinp2==1:
+    if musicinp2=='1':
         print("Playing 'Jailhouse Rock'...")
         time.sleep(2)
         #Code for playing music here
         return
-    if musicinp2==2:
+    if musicinp2=='2':
         print("Playing 'If you leave me now...")
         time.sleep(2)
         #Code for playing music here
         return
-    if musicinp2==3:
+    if musicinp2=='3':
         print("Playing 'Messaround'...")
         time.sleep(2)
         #Code for playing music here
         return
-    if musicinp2==4:
+    if musicinp2=='4':
         print("Playing 'Anything goes'...")
         time.sleep(2)
         #Code for playing music here
         return
-    if musicinp2==5:
+    if musicinp2=='5':
         print("Playing 'Orange Sky'...")
         time.sleep(2)
         #Code for playing music here
         return
     else:
         print("Invalid option!")
-        continue
     
 def wepmus(wep):  
     print("############################################")
     print("{} Music".format(wep))
     print("1. Video Killed the radio star\n2. September\n3. You make my dreams come true\n4. Don't you forget about me\n5. Wild Wild Life\n6. Jump")
     musicinp2=input("Select a number:")
-    if musicinp2==1:
+    if musicinp2=='1':
         print("Playing 'Video killed the radio start'...")
         time.sleep(2)
         #Code for playing music here
         return
-    if musicinp2==2:
+    if musicinp2=='2':
         print("Playing 'September'...")
         time.sleep(2)
         #Code for playing music here
         return
-    if musicinp2==3:
+    if musicinp2=='3':
         print("Playing 'You make my dreams come true'...")
         time.sleep(2)
         #Code for playing music here
         return
-    if musicinp2==4:
+    if musicinp2=='4':
         print("Playing 'Don't you forget about me'...")
         time.sleep(2)
         #Code for playing music here
         return
-    if musicinp2==5:
+    if musicinp2=='5':
         print("Playing 'Wild Wild Life'...")
         time.sleep(2)
         #Code for playing music here
         return
-    if musicinp2==6:
+    if musicinp2=='6':
         print("Playing 'Jump'...")
         time.sleep(2)
         #Code for playing music here
         return
     else:
         print("Invalid option!")
-        continue
               
 def clear():
     os.system('cls' if os.name == 'nt' else 'clear')
