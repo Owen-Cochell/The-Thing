@@ -104,13 +104,21 @@ while on==True:
                 clear()
                 music(tec, bio, pio, wep)
                 musicinp=input("Please select a number:")
-                if musicinp==1:
+                if musicinp=='1':
                     clear()
                     tecmus(tec)
                     continue
-                if musicinp==2:
+                if musicinp=='2':
                     clear()
                     biomus(bio)
+                    continue
+                if musicinp=='3':
+                    clear()
+                    piomus(pio)
+                    continue
+                if musicinp=='4':
+                    clear()
+                    wepmus(wep)
                     continue
             if inp=='file':
                 print("Starting 'FILE.SH(C:/SYS/FILEMAN)'...")
