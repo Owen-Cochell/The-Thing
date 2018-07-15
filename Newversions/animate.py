@@ -362,7 +362,7 @@ def music(tec, bio, pio, wep):
     print("Welcome to the music player fellas.\nThis app was made by %s(you're welcome)\nPeoples songs are seperated by directores.\nJam on boys!" % tec)
     print("")
     print("Please select a directory:")
-    print("1.%s's Jams\n2.%s's Bores\n3.%s Songs\n4.%s Songs" % tec,bio,pio,wep)
+    print("1.{}'s Jams\n2.{}'s Bores\n3.{} Songs\n4.{} Songs".format(tec, bio, pio, wep))
     return
 
 def tecmus(tec):
@@ -372,8 +372,12 @@ def tecmus(tec):
     musicinp2=input("Select a number:")
     if musicinp2==1:
         print("Playing 'Lets do the time warp again'...")
+        time.sleep(2)
         #Code for playing music here
         return
+    else:
+        print("Invalid option!")
+        continue
 
 def biomus(bio):
     print("############################################")
@@ -382,12 +386,90 @@ def biomus(bio):
     musicinp2=input("Select a number:")
     if musicinp2==1:
         print("Playing 'The fair at Sorochyntsi'...")
+        time.sleep(2)
         #code for playing music here
         return
     if musicinp2==2:
         print("Playing 'Samson and Delila Bacchanale'...")
+        time.sleep(2)
         #Code for playing music here
         return
+    else:
+        print("Invalid option!")
+        continue
+    
+def piomus(pio):
+    print("############################################")
+    print("%s Music" % pio)
+    print("1. Jailhouse Rock\n2. If you leave me now\n3. Messaround\n4. Anything goes\n5. Orange sky")
+    musicinp2=input("Select a number:")
+    if musicinp2==1:
+        print("Playing 'Jailhouse Rock'...")
+        time.sleep(2)
+        #Code for playing music here
+        return
+    if musicinp2==2:
+        print("Playing 'If you leave me now...")
+        time.sleep(2)
+        #Code for playing music here
+        return
+    if musicinp2==3:
+        print("Playing 'Messaround'...")
+        time.sleep(2)
+        #Code for playing music here
+        return
+    if musicinp2==4:
+        print("Playing 'Anything goes'...")
+        time.sleep(2)
+        #Code for playing music here
+        return
+    if musicinp2==5:
+        print("Playing 'Orange Sky'...")
+        time.sleep(2)
+        #Code for playing music here
+        return
+    else:
+        print("Invalid option!")
+        continue
+    
+def wepmus(wep)    
+    print("############################################")
+    print("{} Music".format(wep))
+    print("1. Video Killed the radio star\n2. September\n3. You make my dreams come true\n4. Don't you forget about me\n5. Wild Wild Life\n6. Jump")
+    musicinp2=input("Select a number:")
+    if musicinp2==1:
+        print("Playing 'Video killed the radio start'...")
+        time.sleep(2)
+        #Code for playing music here
+        return
+    if musicinp2==2:
+        print("Playing 'September'...")
+        time.sleep(2)
+        #Code for playing music here
+        return
+    if musicinp2==3:
+        print("Playing 'You make my dreams come true'...")
+        time.sleep(2)
+        #Code for playing music here
+        return
+    if musicinp2==4:
+        print("Playing 'Don't you forget about me'...")
+        time.sleep(2)
+        #Code for playing music here
+        return
+    if musicinp2==5:
+        print("Playing 'Wild Wild Life'...")
+        time.sleep(2)
+        #Code for playing music here
+        return
+    if musicinp2==6:
+        print("Playing 'Jump'...")
+        time.sleep(2)
+        #Code for playing music here
+        return
+    else:
+        print("Invalid option!")
+        continue
               
 def clear():
     os.system('cls' if os.name == 'nt' else 'clear')
