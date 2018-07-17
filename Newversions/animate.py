@@ -89,7 +89,6 @@ def help(usern, wep, pio, bio, tec):
     print("'music' starts music player")
     print("'file' accesses filesystem")
     print("'radio' opens radio app")
-    print("'gen_config' opens generator config menu")
     print("'info' to see info on account")
     print("'clear' clears the terminal screen")
     if usern==wep:
