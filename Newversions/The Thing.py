@@ -16,6 +16,8 @@ tec='Windows'
 pio='Mcrege'
 wep='Gary'
 bio='Blair'
+optiony = ('Y', 'y', 'Yes', 'yes', 'Ye', 'ye')
+optionn = ('N', 'n', 'No', 'no')
 
 while on==True:
     #Boot up procedure
@@ -30,7 +32,7 @@ while on==True:
             if lockinp==lockpass:
                 lockconf2()
                 lockconf2=input("(Y/N):")
-                if lockconf2 in ('Y', 'y', 'yes'):
+                if lockconf2 in optiony:
                     print("Starting 'LOCKDOWN_DIS.SH(C:/SYS/SECURITY')...")
                     time.sleep(1)
                     clear()
@@ -40,12 +42,12 @@ while on==True:
                     lockpass='test123'
                     authe=False
                     continue
-                if lockconf2 in ('N', 'n', 'no'):
+                if lockconf2 in optionn:
                     continue
             if lockinp==wepp:
                 lockconf2()
                 lockconf2==input("(Y/N):")
-                if lockconf2 in ('Y', 'y', 'yes'):
+                if lockconf2 in optiony:
                     print("Starting 'LOCKDOWN_DIS.SH(C:/SYS/SECURITY')...")
                     time.sleep(1)
                     clear()
@@ -54,7 +56,7 @@ while on==True:
                     lockconf=False
                     lockpass='test123'
                     continue
-                if lockcon2 in ('N', 'n', 'no'):
+                if lockcon2 in optionn:
                     continue
             else:
                 clear()
@@ -157,10 +159,10 @@ while on==True:
                     lockpass=lockcon(lockpass, lockconf)
                     lockconf=lockcon(lockpass, lockconf)
                     lockconfd=input("(Y/N):")
-                    if lockconfd in ('Y', 'yes', 'y'):
+                    if lockconfd in optiony:
                         lockconf=True
                         return lockconf, lockpass
-                    if lockconfd in ('N', 'n', 'no'):
+                    if lockconfd in optionn:
                         lockconf=False
                         return lockconf
                     if lockconf==True:
