@@ -415,7 +415,7 @@ def piomus(pio):
         #Code for playing music here
         return
     if musicinp2=='2':
-        print("Playing 'If you leave me now...")
+        print("Playing 'If you leave me now'...")
         time.sleep(2)
         #Code for playing music here
         return
