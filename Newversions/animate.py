@@ -7,7 +7,7 @@ def boot(suc):
     print("                __         __                   __     __ __  __       \n              / __ \__  __/ /_____  ____  _____/ /_   / // /^/ /\n             / / / / / / / __/ __ \/ __ \/ ___/ __/  / // /_/ / \n            / /_/ / /_/ / /_/ /_/ / /_/ (__  ) /_   /__  __/ /  \n            \____/\____/\__/ .___/\____/____/\__/     /_/ /_/   \n                          /_/     ")                          
     print("                        United States Research Divison    \n                             O.I.M ver. 1.73.48")
     print("Starting system...")
-    print("#Accessing boot files(/SYS/boot/)...")
+    print("#Accessing boot files(C:/SYS/boot/)...")
     time.sleep(2)
     print("#Loading modules...")
     time.sleep(3)
