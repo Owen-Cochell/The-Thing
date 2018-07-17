@@ -135,9 +135,6 @@ while on==True:
             if inp=='radio':
                 print("This feature is not yet implemented.")
                 continue
-            if inp=='gen_config':
-                print("This feature is not yet implemented.")
-                continue
             if inp=='info':
                 print("This feature is under development.")
                 uinfo(usern, logg, tec, bio, pio, wep)
