@@ -477,7 +477,7 @@ def wepmus(wep):
     else:
         print("Invalid option!")
            
- def signalsearch(var1):
+def signalsearch(var1):
     intime=0
     for m in itertools.cycle(['|', '/', '-', '\\']):
         sys.stdout.write("\r{}{}".format(var1, m))
