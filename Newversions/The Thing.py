@@ -75,8 +75,16 @@ while on==True:
             print("Please login:")
             usern=input("Username:")
             passw=input("Password:")
-            auth(authe, tec, pio, wep, bio, tecp, piop, wepp, biop, usern, passw)
-            authe=auth(authe, tec, pio, wep, bio, tecp, piop, wepp, biop, usern, passw)
+            if usern==tec and passw==tecp:
+                authe=True
+            if usern==pio and passw==piop:
+                authe=True
+            if usern==wep and passw==wepp:
+                authe=True
+            if usern==bio and passw==biop:
+                authe=True
+            else:
+                authe=False
             if authe==False:
                 clear()
                 print("Error: \n#Incorect Username/Password!")
@@ -137,7 +145,7 @@ while on==True:
                 fileinp=("Please enter a file number here:")
                 continue
             if inp=='radio':
-                print("This feature is not yet implemented.")
+                print("This feature is under development")
                 print("Starting 'RADIO.SH(C:/SYS/RADIO/)'...")
                 time.sleep(1)
                 clear()
