@@ -163,8 +163,8 @@ while on==True:
                 print("This feature is currently in development")
                 if usern==wep:
                     lockcon(lockpass, lockconf)
-                    lockpass=lockcon(lockpass, lockconf)
-                    lockconf=lockcon(lockpass, lockconf)
+                    lockpass=input("Password:")
+                    print("\nAre you sure?")
                     lockconfd=input("(Y/N):")
                     if lockconfd in optiony:
                         lockconf=True
