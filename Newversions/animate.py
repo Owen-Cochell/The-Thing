@@ -11,9 +11,9 @@ def boot(suc):
     time.sleep(2)
     print("#Loading modules...")
     time.sleep(3)
-    print("Initializing P.E.E(Protected Execution Environment)...")
+    print("#Initializing P.E.E(Protected Execution Environment)...")
     time.sleep(2)
-    print("Loading G.U.I(Graphical User Interface)...")
+    print("#Loading G.U.I(Graphical User Interface)...")
     time.sleep(3)
     print(suc)
     print("Running diagnostics...")
@@ -473,7 +473,99 @@ def wepmus(wep):
         return
     else:
         print("Invalid option!")
-              
+           
+ def signalsearch(var1):
+    intime=0
+    for m in itertools.cycle(['|', '/', '-', '\\']):
+        sys.stdout.write("\r{}{}".format(var1, m))
+        sys.stdout.flush()
+        time.sleep(0.1)
+        intime=intime+1
+        if intime==20:
+            print("\n")
+            break
+        
+def radios(suc):
+    print("############################################")
+    print("                FROM .BASH")
+    print("Starting...")
+    print("Accessing disk...")
+    time.sleep(1)
+    print(suc)
+    print("Prepping system...")
+    print("#Loading radio firmware(C:/SYS/FIM/RAD/)...")
+    time.sleep(3)
+    print("#Finding and configuring broadcast equipment...")
+    time.sleep(2)
+    print("#Testing connection...")
+    time.sleep(3)
+    print(suc)
+    print("############################################")
+    print("(END RADIO.SH)")
+    return
+
+def radio(freq, optiony, optionn):
+    print("############################################")
+    print("Radio Interface System ver. 3.3.8")
+    print("@1986 All Rights Reserved ENTech LLC.")
+    print("Welcome to the Radio Interface System!")
+    print("Please Enter a frequency below to start broadcasting:\n")
+    freqinp=input("Enter a frequency:")
+    if freqinp==freq:
+        var1='Searching'
+        clear()
+        print("Searching for signals...")
+        signalsearch(var1)
+        print("\nSignal accuired!")
+        print("Connection to 'Automated Relay Station 1156' established!")
+        print("Are you sure you want to broadcast a 'SOS' alert?")
+        sosinp=input("(Y/N):")
+        if sosinp in optiony:
+            #Code for radio backend here
+            print("Broadcasting 'SOS' alert...")
+            time.sleep(4)
+            print("Accuired response!")
+            print("Displaying response:")
+            print("\n(BEGIN MESSAGE:)")
+            print("+==========================================+")
+            print("|(5/19/1986, 05:27:06)                     |")
+            print("|Automated Relay Station 1156              |")
+            print("|This is a automated message(CODE 1194)    |")
+            print("|Reinforcments inbound. Arriving in 2 days.|")
+            print("|Evacuating all crew and staff upon arrival|")
+            print("+==========================================+")
+            print("(END MESSAGE)")
+            x=input("\nPress any key to continue...")
+            print("This message has been sent with a protocal code(1194).\nDisplaying instructions below:")
+            print("\n############################################")
+            print("Protocal code: 1194\nProtocal name: Evacuation protocal")
+            print("Instructions:\n1. Gather all research doucuments/specimins(IF POSSIBLE).")
+            print("2. Inform/prepare all crew and staff for evacuation.")
+            print("3. Gather all class C and above materials(IF POSSIBLE). Personal belongins are NOT to be brought.")
+            print("4. Prepare landing pad")
+            print("The evacuation team will be arriving in TWO DAYS.\nPlease have these tasks completed upon arrival.")
+            print("############################################")
+            x=input("Press any key to continue...")
+            print("Exiting...")
+            time.sleep(1)
+            clear()
+            return
+            
+        if sosinp in optionn:
+            print("Exiting...")
+            time.sleep(1)
+            clear()
+            return
+    else:
+        var1='Searching'
+        clear()
+        print("Searching for signals...")
+        signalsearch(var1)
+        print("No signals found. Exiting...")
+        time.sleep(2)
+        clear()
+        return
+    
 def clear():
     os.system('cls' if os.name == 'nt' else 'clear')
     return
