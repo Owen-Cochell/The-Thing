@@ -88,6 +88,8 @@ while on==True:
             if authe==False:
                 clear()
                 print("Error: \n#Incorect Username/Password!")
+                x=input("Press any key to continue...")
+                continue
             if authe==True:
                 break
         #Login procedure
