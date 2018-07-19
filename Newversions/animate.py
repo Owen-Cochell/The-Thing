@@ -385,8 +385,10 @@ def tecmus(tec):
         #Code for playing music here
         return
     else:
-        print("Invalid option!")
-        continue
+        print("Invalid option! Exiting...")
+        time.sleep(1)
+        clear()
+        return
 
 def biomus(bio):
     print("############################################")
@@ -404,7 +406,10 @@ def biomus(bio):
         #Code for playing music here
         return
     else:
-        print("Invalid option!")
+        print("Invalid option! Exiting...")
+        time.sleep(1)
+        clear()
+        return
     
 def piomus(pio):
     print("############################################")
@@ -437,7 +442,10 @@ def piomus(pio):
         #Code for playing music here
         return
     else:
-        print("Invalid option!")
+        print("Invalid option! Exiting...")
+        time.sleep(1)
+        clear()
+        return
     
 def wepmus(wep):  
     print("############################################")
@@ -475,7 +483,10 @@ def wepmus(wep):
         #Code for playing music here
         return
     else:
-        print("Invalid option!")
+        print("Invalid option! Exiting...")
+        time.sleep(1)
+        clear()
+        return
            
 def signalsearch(var1):
     intime=0
