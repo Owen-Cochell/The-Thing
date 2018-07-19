@@ -2,6 +2,9 @@
 import time
 import os
 from animate import *
+import itertools
+import threading
+import sys
 #Code for passwords here
 suc='#Success!'
 authe=False
@@ -12,6 +15,7 @@ lockconf=False
 lockpass='test123'
 logg=False
 temp=20
+#Code for frequency here
 tec='Windows'
 pio='Mcrege'
 wep='Gary'
@@ -134,6 +138,12 @@ while on==True:
                 continue
             if inp=='radio':
                 print("This feature is not yet implemented.")
+                print("Starting 'RADIO.SH(C:/SYS/RADIO/)'...")
+                time.sleep(1)
+                clear()
+                radios(suc)
+                clear()
+                radio(freq, optiony, optionn)
                 continue
             if inp=='info':
                 print("This feature is under development.")
