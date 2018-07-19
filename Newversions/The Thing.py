@@ -60,7 +60,7 @@ while on==True:
                     lockconf=False
                     lockpass='test123'
                     continue
-                if lockcon2 in optionn:
+                if lockconf2 in optionn:
                     continue
             else:
                 clear()
