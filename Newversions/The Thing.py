@@ -83,8 +83,6 @@ while on==True:
                 authe=True
             if usern==bio and passw==biop:
                 authe=True
-            else:
-                authe=False
             if authe==False:
                 clear()
                 print("Error: \n#Incorect Username/Password!")
