@@ -1,6 +1,9 @@
 #This module has the animations and cutscenes inside
 import time
 import os
+import itertools
+import threading
+import sys
 suc='#Success!'
 def boot(suc):
     #Code for boot up procedure
