@@ -221,8 +221,6 @@ def lockcon(lockpass, lockconf):
     print("The only way to lift a lockdown is to enter set password, or security overide password\n")
     print("Please set your security lockdown password below.")
     print("(REMEMBER THIS!!)")
-    lockpass=input("Password:")
-    print("\nAre you sure?")
     
 def lockint(suc):
     print("############################################")
