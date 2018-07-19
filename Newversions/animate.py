@@ -153,7 +153,7 @@ def files(suc):
 def file():
     print("###########################################")
     print("File Manager System ver. 1.74.52")
-    print("@1987 All rights reserved ENTech LLC.\n")
+    print("@1986 All rights reserved ENTech LLC.\n")
     print("Welcome to File Manager!")
     print("Below are files that can be veiwed. Enter the file number to view it.")
     print("'.txt' files can be veiwed, but '.enc' are encrypted and can't be viewed without decrypting them first\n")
