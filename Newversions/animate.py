@@ -132,6 +132,7 @@ def logout(suc):
     print(suc)
     print("#############################################")
     print("(END LOGOUT.SH)")
+    time.sleep(1)
     return
 
 def files(suc):
@@ -267,6 +268,7 @@ def lockint(suc):
     time.sleep(2)
     print("############################################")
     print("(END LOCKDOWN.SH)")
+    time.sleep(1)
     return
 
 def lockout():
@@ -361,6 +363,7 @@ def musics(suc, tec):
     print(suc)
     print("############################################")
     print("(END MUSIC.SH)")
+    time.sleep(1)
     return
     
 def music(tec, bio, pio, wep):
@@ -514,6 +517,7 @@ def radios(suc):
     print(suc)
     print("############################################")
     print("(END RADIO.SH)")
+    time.sleep(1)
     return
 
 def radio(freq, optiony, optionn):
