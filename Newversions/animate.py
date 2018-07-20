@@ -613,7 +613,7 @@ def wepmus(wep):
         #Code for playing music here
         return
     if musicinp2=='6':
-        vr1="Playing 'Jump'..."
+        var1="Playing 'Jump'..."
         ltime=20
         load(var1, suc, ltime, end, lpass)
         clear()
