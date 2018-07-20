@@ -7,30 +7,77 @@ import sys
 suc='#Success!'
 def boot(suc):
     #Code for boot up procedure
+    lpass=False
     print("                __         __                   __     __ __  __       \n              / __ \__  __/ /_____  ____  _____/ /_   / // /^/ /\n             / / / / / / / __/ __ \/ __ \/ ___/ __/  / // /_/ / \n            / /_/ / /_/ / /_/ /_/ / /_/ (__  ) /_   /__  __/ /  \n            \____/\____/\__/ .___/\____/____/\__/     /_/ /_/   \n                          /_/     ")                          
     print("                        United States Research Divison    \n                             O.I.M ver. 1.73.48")
-    print("Starting system...")
-    print("#Accessing boot files(C:/SYS/boot/)...")
-    time.sleep(2)
-    print("#Loading modules...")
-    time.sleep(3)
-    print("#Initializing P.E.E(Protected Execution Environment)...")
-    time.sleep(2)
-    print("#Loading G.U.I(Graphical User Interface)...")
-    time.sleep(3)
-    print(suc)
-    print("Running diagnostics...")
-    print("#POST test...")
-    time.sleep(2)
-    print("#Disk test...")
-    time.sleep(3)
-    print("#RAM test...")
+    print("+===================+")
+    print("|Starting system... |")
+    print("+===================+")
+    end=False
+    var1="#Accessing boot files(C:/SYS/boot/)..."
+    ltime=20
+    load(var1, suc, ltime, end, lpass)
+    var1="#Loading modules..."
+    ltime=40
+    load(var1, suc, ltime, end, lpass)
+    var1="#Initializing P.E.E(Protected Execution Environment)..."
+    ltime=20
+    load(var1, suc, ltime, end, lpass)
+    var1="#Loading G.U.I(Graphical User Interface)..."
+    ltime=40
+    end=True
+    load(var1, suc, ltime, end, lpass)
+    print("\n+=======================+")
+    print("|Running diagnostics... |")
+    print("+=======================+")
+    lpass=True
+    end=False
+    var1="#POST test..."
+    ltime=20
+    load(var1, suc, ltime, end, lpass)
+    var1="#Disk test..."
+    ltime=40
+    load(var1, suc, ltime, end, lpass)
+    var1="#RAM test..."
+    ltime=10
+    load(var1, suc, ltime, end, lpass)
+    var1="#System integrety check..."
+    ltime=50
+    end=True
+    load(var1, suc, ltime, end, lpass)
     time.sleep(1)
-    print("#System integrety check...")
-    time.sleep(4)
-    print(suc)
-    time.sleep(1)
+    lpass=False
     return
+
+def load(var1, suc, ltime, end, lpass):
+    intime=0
+    passv='PASS'
+    sys.stdout.write("\n")
+    for m in itertools.cycle(['|', '/', '-', '\\']):
+        sys.stdout.write("{}{}\r".format(var1, m))
+        sys.stdout.flush()
+        time.sleep(0.1)
+        intime=intime+1
+        if intime==ltime:
+            if end==True:
+                if lpass==True:
+                    sys.stdout.write("{}{}\r".format(var1, passv))
+                    sys.stdout.flush()
+                if lpass==False:
+                    m=' '
+                    sys.stdout.write("{}{}\r".format(var1, m))
+                    sys.stdout.flush()
+                print("\n{}".format(suc))
+                return
+            if end==False:
+                if lpass==True:
+                    sys.stdout.write("{}{}\r".format(var1, passv))
+                    return
+                if lpass==False:
+                    m=' '
+                    sys.stdout.write("{}{}\r".format(var1, m))
+                    sys.stdout.flush()
+                    return
 
 def auth(authe, tec, pio, wep, bio, tecp, piop, wepp, biop, usern, passw):
     #authentication backend
@@ -52,21 +99,28 @@ def auth(authe, tec, pio, wep, bio, tecp, piop, wepp, biop, usern, passw):
 
 def login(suc):
     #Code for starting terminal
+    lpass=False
     print("############################################################\n                     FROM .BASH                     ")
     print("Starting...")
-    print("Accessing harddrive...")
-    time.sleep(1)
-    print("#Testing 'READ'")      
-    time.sleep(1)
-    print("#Testing 'WRITE'")
-    time.sleep(1)
-    print(suc)
-    print("Accessing 'USERS.SH'(C:/SYS/USR)")
-    time.sleep(2)
-    print(suc)
-    print("Finalising...")
-    time.sleep(3)
-    print(suc)
+    end=False
+    var1="Accessing harddrive..."
+    ltime=10
+    load(var1, suc, ltime, end, lpass)
+    lpass=True
+    var1="#Testing 'READ'..."
+    ltime=10
+    load(var1, suc, ltime, end, lpass)
+    var1="#Testing 'WRITE'..."
+    end=True
+    ltime=10
+    load(var1, suc, ltime, end, lpass)
+    lpass=False
+    var1="Accessing 'USERS.SH'(C:/SYS/USR)..."
+    ltime=20
+    load(var1, suc, ltime, end, lpass)
+    var1="Finalising..."
+    ltime=40
+    load(var1, suc, ltime, end, lpass)
     print("###########################################################")
     print("(END LOGIN.SH)")
     time.sleep(1)
@@ -113,38 +167,51 @@ def help(usern, wep, pio, bio, tec):
     return
 
 def logout(suc):
+    lpass=False
+    end=True
     print("##############################################")
     print("               FROM .BASH                     ")
     print("Starting...")
-    print("Stopping terminal session 'TERM.SH(C:\SYS\ACCOUNT)'")
-    time.sleep(3)
-    print(suc)
+    var1="Stopping terminal session 'TERM.SH(C:\SYS\ACCOUNT)...'"
+    ltime=40
+    load(var1, suc, ltime, end, lpass)
+    end=False
     print("Clearing temporary data...")
-    print("#Clearing cach...")
-    time.sleep(2)
-    print("#Clearing variables...")
-    time.sleep(1)
-    print("#Clearing user data...")
-    time.sleep(1)
-    print(suc)
-    print("Loading 'LOGINSCREEN.SH(C:/SYS/ACCOUNT)'")
-    time.sleep(2)
-    print(suc)
+    var1="#Clearing cach..."
+    ltime=20
+    load(var1, suc, ltime, end, lpass)
+    var1="#Clearing variables..."
+    ltime=10
+    load(var1, suc, ltime, end, lpass)
+    var1="#Clearing user data..."
+    ltime=10
+    end=True
+    load(var1, suc, ltime, end, lpass)
+    var1="Loading 'LOGINSCREEN.SH(C:/SYS/ACCOUNT)'..."
+    ltime=20
+    load(var1, suc, ltime, end, lpass)
     print("#############################################")
     print("(END LOGOUT.SH)")
     time.sleep(1)
     return
 
 def files(suc):
+    end=False
+    lpass=False
     print("############################################")
     print("                FROM .BASH                 ")
     print("Starting...")
-    print("Acessing harddrive...")
-    print("#Testing READ")
-    time.sleep(1)
-    print("#Testing WRITE")
-    time.sleep(2)
-    print(suc)
+    var1="Acessing harddrive..."
+    ltime=10
+    load(var1, suc, ltime, end, lpass)
+    var1="#Testing READ..."
+    ltime=10
+    lpass=True
+    load(var1, suc, ltime, end, lpass)
+    var1="#Testing WRITE..."
+    ltime=20
+    end=True
+    load(var1, suc, ltime, end, lpass)
     print("############################################")
     print("(END FILE.SH)")
     time.sleep(1)
@@ -153,7 +220,7 @@ def files(suc):
 def file():
     print("###########################################")
     print("File Manager System ver. 1.74.52")
-    print("@1986 All rights reserved ENTech LLC.\n")
+    print("@1987 All rights reserved ENTech LLC.\n")
     print("Welcome to File Manager!")
     print("Below are files that can be veiwed. Enter the file number to view it.")
     print("'.txt' files can be veiwed, but '.enc' are encrypted and can't be viewed without decrypting them first\n")
@@ -206,7 +273,7 @@ def lockinfo():
     print("How do I activate a lockdown?:")
     print("Activating a lockdown will prompt you for a password, and conformation.")
     print("PLEASE KEEP THIS PASSWORD AS THE ONLY OTHER WAY TO LIFT A LOCKDOWN IS TO ENTER SECURITY OVERIDE PASSWORD")
-    print("The system will reboot, and it will promt you with a password screen to lift the system lockdown.")
+    print("The system will reboot, and it will prompt you with a password screen to lift the system lockdown.")
     print("###########################################")
     print("How do I deactivate a lockdown?:")
     print("To deactivate a lockdown, enter the password you have set, or enter the security overide password.")
@@ -224,44 +291,61 @@ def lockcon(lockpass, lockconf):
     print("(REMEMBER THIS!!)")
     
 def lockint(suc):
+    end=True
+    lpass=False
     print("############################################")
     print("                FROM .BASH")
     print("Starting...")
-    time.sleep(2)
-    print("Accessing hardrive...")
-    time.sleep(2)
-    print(suc)
+    var1="Accessing hardrive..."
+    ltime=20
+    load(var1, suc, ltime, end, lpass)
+    end=False
     print("Initiating lockdown...")
-    print("#Editing boot files...")
-    time.sleep(2)
-    print("#Placing account safeguards...")
-    time.sleep(3)
-    print("#Sending 'LOCKDOWN' signal to all machinery...")
-    time.sleep(4)
-    print("#Changing settings...")
-    time.sleep(2)
-    print(suc)
+    var1="#Editing boot files..."
+    ltime=20
+    load(var1, suc, ltime, end, lpass)
+    var1="#Placing account safeguards..."
+    ltime=30
+    load(var1, suc, ltime, end, lpass)
+    var1="#Sending 'LOCKDOWN' signal to all machinery..."
+    ltime=40
+    load(var1, suc, ltime, end, lpass)
+    var1="#Changing settings..."
+    ltime=20
+    end=True
+    load(var1, suc, ltime, end, lpass)
+    end=False
     print("Encrypting filesystem(this will take awile)...")
-    print("#0%")
-    time.sleep(2)
-    print("#10%")
-    time.sleep(3)
-    print("#20%")
-    time.sleep(1)
-    print("#30%")
-    time.sleep(4)
-    print("#40%")
-    time.sleep(1)
-    print("#50%")
-    time.sleep(1)
-    print("#60%")
-    time.sleep(5)
-    print("#70%")
-    time.sleep(2)
-    print("#80%")
-    time.sleep(3)
-    print("#90%")
-    time.sleep(4)
+    var1="#0%"
+    ltime=20
+    load(var1, suc, ltime, end, lpass)
+    var1="#10%"
+    ltime=30
+    load(var1, suc, ltime, end, lpass)
+    var1="#20%"
+    ltime=10
+    load(var1, suc, ltime, end, lpass)
+    var1="#30%"
+    ltime=40
+    load(var1, suc, ltime, end, lpass)
+    var1="#40%"
+    ltime=10
+    load(var1, suc, ltime, end, lpass)
+    var1="#50%"
+    ltime=10
+    load(var1, suc, ltime, end, lpass)
+    var1="#60%"
+    ltime=50
+    load(var1, suc, ltime, end, lpass)
+    var1="#70%"
+    ltime=20
+    load(var1, suc, ltime, end, lpass)
+    var1="#80%"
+    ltime=30
+    load(var1, suc, ltime, end, lpass)
+    var1="#90%"
+    ltime=40
+    load(var1, suc, ltime, end, lpass)
     print("#100%")
     print(suc)
     print("Complete. The system will now reboot.")
@@ -269,6 +353,7 @@ def lockint(suc):
     print("############################################")
     print("(END LOCKDOWN.SH)")
     time.sleep(1)
+    os.system("color 0c")
     return
 
 def lockout():
@@ -298,48 +383,66 @@ def lerror(lockinp):
     return
 
 def lockconf2():
-    print("Are you sure you want to disable lockdown?")
+    print("\nAre you sure you want to disable lockdown?")
     return
 
 def lockdis(suc):
+    end=True
+    lpass=False
     print("############################################")
     print("                FROM .BASH")
     print("Starting...")
     time.sleep(2)
-    print("Accessing hardrive...")
-    time.sleep(2)
-    print(suc)
+    var1="Accessing hardrive..."
+    ltime=20
+    load(var1, suc, ltime, end, lpass)
+    end=False
     print("Disabling lockdown...")
-    print("#Editing boot files...")
-    time.sleep(1)
-    print("#Removing account safeguards...")
-    time.sleep(3)
-    print("#Sending 'DIS_LOCKDOWN' signal to all machinery...")
-    time.sleep(4)
-    print("#Changing settings...")
-    time.sleep(2)
-    print(suc)
+    var1="#Editing boot files..."
+    ltime=10
+    load(var1, suc, ltime, end, lpass)
+    var1="#Removing account safeguards..."
+    ltime=30
+    load(var1, suc, ltime, end, lpass)
+    var1="#Sending 'DIS_LOCKDOWN' signal to all machinery..."
+    ltime=40
+    load(var1, suc, ltime, end, lpass)
+    var1="#Changing settings..."
+    ltime=20
+    end=True
+    load(var1, suc, ltime, end, lpass)
+    end=False
     print("De-crypting filesystem(this will take awile)...")
-    print("#0%")
-    time.sleep(2)
-    print("#10%")
-    time.sleep(3)
-    print("#20%")
-    time.sleep(1)
-    print("#30%")
-    time.sleep(4)
-    print("#40%")
-    time.sleep(1)
-    print("#50%")
-    time.sleep(1)
-    print("#60%")
-    time.sleep(5)
-    print("#70%")
-    time.sleep(2)
-    print("#80%")
-    time.sleep(3)
-    print("#90%")
-    time.sleep(4)
+    var1="#0%"
+    ltime=20
+    load(var1, suc, ltime, end, lpass)
+    var1="#10%"
+    ltime=30
+    load(var1, suc, ltime, end, lpass)
+    var1="#20%"
+    ltime=10
+    load(var1, suc, ltime, end, lpass)
+    var1="#30%"
+    ltime=40
+    load(var1, suc, ltime, end, lpass)
+    var1="#40%"
+    ltime=10
+    load(var1, suc, ltime, end, lpass)
+    var1="#50%"
+    ltime=10
+    load(var1, suc, ltime, end, lpass)
+    var1="#60%"
+    ltime=50
+    load(var1, suc, ltime, end, lpass)
+    var1="#70%"
+    ltime=20
+    load(var1, suc, ltime, end, lpass)
+    var1="#80%"
+    ltime=30
+    load(var1, suc, ltime, end, lpass)
+    var1="#90%"
+    ltime=40
+    load(var1, suc, ltime, end, lpass)
     print("#100%")
     print(suc)
     print("Complete. The system will now reboot.")
@@ -347,20 +450,24 @@ def lockdis(suc):
     print("############################################")
     print("(END LOCKDOWN_DIS.SH)")
     time.sleep(1)
+    os.system("color 0a")
     return
 
 def musics(suc, tec):
+    end=True
+    lpass=False
     print("############################################")
     print("                FROM .BASH")
-    print("Accessing music player directory(C:/USR/%s/MUSIC_PLAY)..." % tec) 
-    time.sleep(1)
-    print(suc)
-    print("Loading libraries into P.E.E(Protected Execution Environment)...")
-    time.sleep(3)
-    print(suc)
-    print("Finding music directory(C:/USR/%s/MUSIC)..." % tec)
-    time.sleep(2)
-    print(suc)
+    print("Starting...")
+    var1="Accessing music player directory(C:/USR/TECHNICAL/MUSIC_PLAY)..."
+    ltime=10
+    load(var1, suc, ltime, end, lpass)
+    var1="Loading libraries into P.E.E(Protected Execution Environment)..."
+    ltime=30
+    load(var1, suc, ltime, end, lpass)
+    var1="Finding music directory(C:/USR/TECHNICAL/MUSIC)..."
+    ltime=20
+    load(var1, suc, ltime, end, lpass)
     print("############################################")
     print("(END MUSIC.SH)")
     time.sleep(1)
@@ -376,117 +483,144 @@ def music(tec, bio, pio, wep):
     return
 
 def tecmus(tec):
+    end=False
+    lpass=False
     print("############################################")
     print("%s Jams" % tec)
     print("1.Let's do the time warp again")
     musicinp2=input("Select a number:")
     if musicinp2=='1':
-        print("Playing 'Lets do the time warp again'...")
-        time.sleep(2)
+        var1="Playing 'Lets do the time warp again'..."
+        ltime=20
+        load(var1, suc, ltime, end, lpass)
         #Code for playing music here
         return
     else:
-        print("Invalid option! Exiting...")
-        time.sleep(1)
-        clear()
+        print("Invalid option!")
         return
 
 def biomus(bio):
+    end=False
+    lpass=False
     print("############################################")
     print("%s Bores" % bio)
     print("1. The fair at Sorochyntsi\n2. Samson and Delila Bacchanale")
     musicinp2=input("Select a number:")
     if musicinp2=='1':
-        print("Playing 'The fair at Sorochyntsi'...")
-        time.sleep(2)
+        var1="Playing 'The fair at Sorochyntsi'..."
+        ltime=20
+        load(var1, suc, ltime, end, lpass)
+        clear()
         #code for playing music here
         return
     if musicinp2=='2':
-        print("Playing 'Samson and Delila Bacchanale'...")
-        time.sleep(2)
+        var1="Playing 'Samson and Delila Bacchanale'..."
+        ltime=20
+        load(var1, suc, ltime, end, lpass)
+        clear()
         #Code for playing music here
         return
     else:
-        print("Invalid option! Exiting...")
-        time.sleep(1)
-        clear()
+        print("Invalid option!")
         return
     
 def piomus(pio):
+    end=False
+    lpass=False
     print("############################################")
     print("%s Music" % pio)
     print("1. Jailhouse Rock\n2. If you leave me now\n3. Messaround\n4. Anything goes\n5. Orange sky")
     musicinp2=input("Select a number:")
     if musicinp2=='1':
-        print("Playing 'Jailhouse Rock'...")
-        time.sleep(2)
+        var1="Playing 'Jailhouse Rock'..."
+        ltime=20
+        load(var1, suc, ltime, end, lpass)
+        clear()
         #Code for playing music here
         return
     if musicinp2=='2':
-        print("Playing 'If you leave me now'...")
-        time.sleep(2)
+        var1="Playing 'If you leave me now'..."
+        ltime=20
+        load(var1, suc, ltime, end, lpass)
+        clear()
         #Code for playing music here
         return
     if musicinp2=='3':
-        print("Playing 'Messaround'...")
-        time.sleep(2)
+        var1="Playing 'Messaround'..."
+        ltime=20
+        load(var1, suc, ltime, end, lpass)
+        clear()
         #Code for playing music here
         return
     if musicinp2=='4':
-        print("Playing 'Anything goes'...")
-        time.sleep(2)
+        var1="Playing 'Anything goes'..."
+        ltime=20
+        load(var1, suc, ltime, end, lpass)
+        clear()
         #Code for playing music here
         return
     if musicinp2=='5':
-        print("Playing 'Orange Sky'...")
-        time.sleep(2)
+        var1="Playing 'Orange Sky'..."
+        ltime=20
+        load(var1, suc, ltime, end, lpass)
+        clear()
         #Code for playing music here
         return
     else:
-        print("Invalid option! Exiting...")
-        time.sleep(1)
-        clear()
+        print("Invalid option!")
         return
     
-def wepmus(wep):  
+def wepmus(wep):
+    end=False
+    lpass=False
     print("############################################")
     print("{} Music".format(wep))
     print("1. Video Killed the radio star\n2. September\n3. You make my dreams come true\n4. Don't you forget about me\n5. Wild Wild Life\n6. Jump")
     musicinp2=input("Select a number:")
     if musicinp2=='1':
-        print("Playing 'Video killed the radio start'...")
-        time.sleep(2)
+        var1="Playing 'Video killed the radio start'..."
+        ltime=20
+        load(var1, suc, ltime, end, lpass)
+        clear()
         #Code for playing music here
         return
     if musicinp2=='2':
-        print("Playing 'September'...")
-        time.sleep(2)
+        var1="Playing 'September'..."
+        ltime=20
+        load(var1, suc, ltime, end, lpass)
+        clear()
         #Code for playing music here
         return
     if musicinp2=='3':
-        print("Playing 'You make my dreams come true'...")
-        time.sleep(2)
+        var1="Playing 'You make my dreams come true'..."
+        ltime=20
+        load(var1, suc, ltime, end, lpass)
+        clear()
         #Code for playing music here
         return
     if musicinp2=='4':
-        print("Playing 'Don't you forget about me'...")
-        time.sleep(2)
+        var1="Playing 'Don't you forget about me'..."
+        ltime=20
+        load(var1, suc, ltime, end, lpass)
+        clear()
         #Code for playing music here
         return
     if musicinp2=='5':
-        print("Playing 'Wild Wild Life'...")
-        time.sleep(2)
+        var1="Playing 'Wild Wild Life'..."
+        ltime=20
+        load(var1, suc, ltime, end, lpass)
+        clear()
         #Code for playing music here
         return
     if musicinp2=='6':
-        print("Playing 'Jump'...")
-        time.sleep(2)
+        vr1="Playing 'Jump'..."
+        ltime=20
+        load(var1, suc, ltime, end, lpass)
+        clear()
         #Code for playing music here
         return
     else:
-        print("Invalid option! Exiting...")
-        time.sleep(1)
-        clear()
+        print("Invalid option!")
         return
            
 def signalsearch(var1):
@@ -501,20 +635,27 @@ def signalsearch(var1):
             break
         
 def radios(suc):
+    end=True
+    lpass=False
     print("############################################")
     print("                FROM .BASH")
     print("Starting...")
-    print("Accessing disk...")
-    time.sleep(1)
-    print(suc)
+    var1="Accessing disk..."
+    ltime=10
+    load(var1, suc, ltime, end, lpass)
+    end=False
     print("Prepping system...")
-    print("#Loading radio firmware(C:/SYS/FIM/RAD/)...")
-    time.sleep(3)
-    print("#Finding and configuring broadcast equipment...")
-    time.sleep(2)
-    print("#Testing connection...")
-    time.sleep(3)
-    print(suc)
+    var1="#Loading radio firmware(C:/SYS/FIM/RAD/)..."
+    ltime=30
+    load(var1, suc, ltime, end, lpass)
+    var1="#Finding and configuring broadcast equipment..."
+    ltime=20
+    load(var1, suc, ltime, end, lpass)
+    var1="#Testing connection..."
+    ltime=30
+    end=True
+    lpass=True
+    load(var1, suc, ltime, end, lpass)
     print("############################################")
     print("(END RADIO.SH)")
     time.sleep(1)
@@ -528,19 +669,22 @@ def radio(freq, optiony, optionn):
     print("Please Enter a frequency below to start broadcasting:\n")
     freqinp=input("Enter a frequency:")
     if freqinp==freq:
-        var1='Searching'
+        var1='Searching...'
         clear()
         print("Searching for signals...")
         signalsearch(var1)
-        print("\nSignal accuired!")
+        print("Signal accuired!")
         print("Connection to 'Automated Relay Station 1156' established!")
         print("Are you sure you want to broadcast a 'SOS' alert?")
         sosinp=input("(Y/N):")
         if sosinp in optiony:
             #Code for radio backend here
-            print("Broadcasting 'SOS' alert...")
-            time.sleep(4)
-            print("Accuired response!")
+            end=False
+            lpass=False
+            var1="Broadcasting 'SOS' alert..."
+            ltime=40
+            load(var1, suc, ltime, end, lpass)
+            print("\nAccuired response!")
             print("Displaying response:")
             print("\n(BEGIN MESSAGE:)")
             print("+==========================================+")
@@ -573,7 +717,7 @@ def radio(freq, optiony, optionn):
             clear()
             return
     else:
-        var1='Searching'
+        var1='Searching...'
         clear()
         print("Searching for signals...")
         signalsearch(var1)
