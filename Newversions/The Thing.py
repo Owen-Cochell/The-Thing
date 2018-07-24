@@ -176,10 +176,8 @@ while on==True:
                     lockconfd=input("(Y/N):")
                     if lockconfd in optiony:
                         lockconf=True
-                        return lockconf, lockpass
                     if lockconfd in optionn:
                         lockconf=False
-                        return lockconf
                     if lockconf==True:
                         print("Starting 'LOCKDOWN.SH(C:/SYS/SECURITY)'...")
                         time.sleep(1)
