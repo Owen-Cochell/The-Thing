@@ -159,7 +159,8 @@ def help(usern, wep, pio, bio, tec):
         print("####################################")
         return
     if usern==bio:
-        print("'fridge_config' to access fridge configuration menu")
+        #print("'fridge_config' to access fridge configuration menu")
+        print("'GENOME_MATCHER' <Err: No definition found>")
         print(" ")
         print("####################################")
         return
