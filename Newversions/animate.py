@@ -5,7 +5,7 @@ import itertools
 import threading
 import sys
 suc='#Success!'
-def boot(suc):
+def boot(suc, corrupt):
     #Code for boot up procedure
     lpass=False
     print("                __         __                   __     __ __  __       \n              / __ \__  __/ /_____  ____  _____/ /_   / // /^/ /\n             / / / / / / / __/ __ \/ __ \/ ___/ __/  / // /_/ / \n            / /_/ / /_/ / /_/ /_/ / /_/ (__  ) /_   /__  __/ /  \n            \____/\____/\__/ .___/\____/____/\__/     /_/ /_/   \n                          /_/     ")                          
@@ -32,7 +32,7 @@ def boot(suc):
     print("+=======================+")
     lpass=True
     end=False
-    var1="#POST test..."
+    var1="#CPU test..."
     ltime=20
     load(var1, suc, ltime, end, lpass)
     var1="#Disk test..."
@@ -42,6 +42,11 @@ def boot(suc):
     ltime=10
     load(var1, suc, ltime, end, lpass)
     var1="#System integrety check..."
+    if corrupt==True:
+        loadf()
+        print("\nErrors detected. Booting to 'FAILSAFE_PARTITION'...")
+        time.sleep(3)
+        return
     ltime=50
     end=True
     load(var1, suc, ltime, end, lpass)
@@ -78,6 +83,34 @@ def load(var1, suc, ltime, end, lpass):
                     sys.stdout.write("{}{}\r".format(var1, m))
                     sys.stdout.flush()
                     return
+
+def loadf():
+    ltime=40
+    intime=0
+    passv='FAIL'
+    sys.stdout.write("\n")
+    for m in itertools.cycle(['|', '/', '-', '\\']):
+        sys.stdout.write("#System integrety check...{}\r".format(m))
+        sys.stdout.flush()
+        time.sleep(0.1)
+        intime=intime+1
+        if intime==ltime:
+            sys.stdout.write("#System integrety check...{}\r".format(passv))
+            return
+
+def loadff():
+    ltime=70
+    intime=0
+    passv='FAIL'
+    sys.stdout.write("\n")
+    for m in itertools.cycle(['|', '/', '-', '\\']):
+        sys.stdout.write("#Checking system image...{}\r".format(m))
+        sys.stdout.flush()
+        time.sleep(0.1)
+        intime=intime+1
+        if intime==ltime:
+            sys.stdout.write("#Checking system image...{}\r".format(passv))
+            return
 
 def auth(authe, tec, pio, wep, bio, tecp, piop, wepp, biop, usern, passw):
     #authentication backend
@@ -154,7 +187,8 @@ def help(usern, wep, pio, bio, tec):
         print("####################################")
         return
     if usern==tec:
-        print("'logg[enable][disable]' to enable/disable logg collection. Type 'logg' for more info")
+        print("'log[enable][disable]' to enable/disable logg collection. Type 'log' for more info")
+        print("'syscheck' to check/repair corrupted files.")
         print(" ")
         print("####################################")
         return
@@ -255,7 +289,11 @@ def uinfo(usern, logg, tec, bio, pio, wep):
     print("#####################################")
     return
     
-def terror(inp):
+def terror(inp, log):
+    if log==True:
+        logf=open("C:\\Users\\Owen\\Desktop\\The-Thing-master\\Newversions\\LOG.txt", "a")
+        logf.write("\n#SYSTEM: Invalid command!")
+        logf.close()
     print("Error:\n#'%s' is not a valid command!" % inp)
     return
 
@@ -413,7 +451,7 @@ def lockdis(suc):
     end=True
     load(var1, suc, ltime, end, lpass)
     end=False
-    print("De-crypting filesystem(this will take awile)...")
+    print("De-crypting filesystem(this will take a wile)...")
     var1="#0%"
     ltime=20
     load(var1, suc, ltime, end, lpass)
@@ -662,7 +700,7 @@ def radios(suc):
     time.sleep(1)
     return
 
-def radio(freq, optiony, optionn):
+def radio(freq, optiony, optionn, log, usern):
     print("############################################")
     print("Radio Interface System ver. 3.3.8")
     print("@1986 All Rights Reserved ENTech LLC.")
@@ -670,6 +708,11 @@ def radio(freq, optiony, optionn):
     print("Please Enter a frequency below to start broadcasting:\n")
     freqinp=input("Enter a frequency:")
     if freqinp==freq:
+        if log==True:
+            logf=open("C:\\Users\\Owen\\Desktop\\The-Thing-master\\Newversions\\LOG.txt", "a")
+            logf.write("\n#USER.{}.TYPE: {}".format(usern, freqinp))
+            logf.write("\n#SYSTEM: Signal accuired!")
+            logf.close()
         var1='Searching...'
         clear()
         print("Searching for signals...")
@@ -679,6 +722,13 @@ def radio(freq, optiony, optionn):
         print("Are you sure you want to broadcast a 'SOS' alert?")
         sosinp=input("(Y/N):")
         if sosinp in optiony:
+            if log==True:
+                logf=open("C:\\Users\\Owen\\Desktop\\The-Thing-master\\Newversions\\LOG.txt", "a")
+                logf.write("\n#USER.{}.TYPE: {}".format(usern, sosinp))
+                logf.write("\n#SYSTEM: Broadcasting SOS alert...")
+                logf.write("\n#SYSTEM: Accuired response!")
+                logf.write("\n#SYSTEM: Displaying 'PROTOCAL_1194'")
+                logf.close()
             #Code for radio backend here
             end=False
             lpass=False
@@ -713,11 +763,22 @@ def radio(freq, optiony, optionn):
             return
             
         if sosinp in optionn:
+            if log==True:
+                logf=open("C:\\Users\\Owen\\Desktop\\The-Thing-master\\Newversions\\LOG.txt", "a")
+                logf.write("\n#USER.{}.TYPE: {}".format(usern, sosinp))
+                logf.write("\n#SYSTEM: Exiting 'RADIO.SH'...")
+                logf.close()
             print("Exiting...")
             time.sleep(1)
             clear()
             return
     else:
+        if log==True:
+            logf=open("C:\\Users\\Owen\\Desktop\\The-Thing-master\\Newversions\\LOG.txt", "a")
+            logf.write("\n#USER.{}.TYPE: {}".format(usern, sosinp))
+            logf.write("\n#SYSTEM: No signals found.")
+            logf.write("\n#SYSTEM: Exiting 'RADIO.SH'...")
+            logf.close()
         var1='Searching...'
         clear()
         print("Searching for signals...")
@@ -726,7 +787,284 @@ def radio(freq, optiony, optionn):
         time.sleep(2)
         clear()
         return
-    
+
+def GMS():
+    clear()
+    print("############################################")
+    print("ATTENTION:\n")
+    print("This application has been deemed unstable by the S.I.C(Script Integrety Checker)")
+    print("Running this script can AND WILL cause serious system corrpution. Run this file at your own risk.")
+    return
+
+def GMB():
+    clear()
+    print("############################################")
+    print("                FROM .BASH")
+    end=True
+    lpass=False
+    print("Starting...")
+    var1='Accessing GENOME_MATHCER directory(C:/USR/BIO/GM)...'
+    ltime=20
+    load(var1, suc, ltime, end, lpass)
+    var1="Loading libraries into P.E.E(Protected Execution Environment)..."
+    ltime=30
+    load(var1, suc, ltime, end, lpass)
+    var1='Accessing GENOME_MATCHER assets(C:/USR/BIO/GM/ASSETS)...'
+    ltime=20
+    load(var1, suc, ltime, end, lpass)
+    print("Complete")
+    print("############################################")
+    print("(END GENOME_MATCHER.SH)")
+    time.sleep(1)
+    return
+
+def GM():
+    clear()
+    print("Enter Genome below:")
+    x=input("Enter Genome here:")
+    time.sleep(3)
+    os.system("color 0c")
+    print("Error: BAD_VARIABLE")
+    time.sleep(2)
+    print("Error: BAD_VARIABLE")
+    time.sleep(1)
+    for x in range(40):
+        time.sleep(0.1)
+        print("Error: BAD_VARIABLE")
+    print("!<_HALTING_ALL_PROCESSES_>!")
+    time.sleep(2)
+    print("Automated failsafe activated. Memory corruption detected.")
+    print("This system will now reboot. Please contact your System Administrator.")
+    x=input("Press any key to continue...")
+    print("REBOOTING...")
+    time.sleep(3)
+    return
+
+def fridges():
+    end=True
+    lpass=False
+    print("############################################")
+    print("                FROM .BASH")
+    print("Starting...")
+    var1='Accessing hard drive...'
+    ltime=20
+    load(var1, suc, ltime, end, lpass)
+    end=False
+    print("Starting app...")
+    var1='Testing connection(DOOR.FIRM)...'
+    ltime=20
+    lpass=True
+    load(var1, suc, ltime, end, lpass)
+    lpass=False
+    var1='#Starting "FRIDGE_CONFIG.SH(C:/SYS/UTIL)...'
+    ltime=30
+    end=True
+    load(var1, suc, ltime, end, lpass)
+    print("############################################")
+    print("(END FRIDGE_CONFIG.SH)")
+    time.sleep(1)
+    return
+
+def fridge():
+    clear()
+    print("#############################################")
+    print("Freezer Interface System ver 3.1.74")
+    print("@1987 All rights reserved ENTech LLC.\n")
+    print("Welcome to freezer configuration menu!")
+    print("To see more info, select an option\n")
+    print("Please select an option:")
+    print("1.Freezer temperature")
+    print("2.Door lock")
+    print("3.Air purification")
+    print("4.Help")
+    return
+
+def fridgetemp(temp):
+    print("############################################")
+    print("Please select a temperature:\n")
+    print("Temp > 30 will spoil all food/samples in one cycle")
+    print("Temp <30 can not support living creatures\n")
+    print("Current temperature:\n{} degress".format(temp))
+    return
+
+def syscorp():
+     print("    ___ ")  
+     print(" .'/   \ ") 
+     print("  / /     \ ")
+     print("^| ^|     ^| ")
+     print("^| ^|     ^| ") 
+     print("^|/`.   .' ")
+     print("  `.^|   ^|  ")
+     print("  ^|^|___^|  ")
+     print("  ^|/___/  ")
+     print("  .'.--.  ")
+     print(" ^| ^|    ^| ")
+     print(" \_\    / ")
+     print("  `''--'  ")
+     print(" ")
+     print("ATTENTION:")
+     print("A fatal error has occured. see below for details:")
+     print("############################################")
+     print("<RAW DATA>\n\nERROR: FATAL_MEMORY_LEAK\nERROR CODE: 0x00491")
+     print("-------------BEGIN_MEMORY_DUMP-----------")
+     print("HJSNdjbnKJW(8dw88UWNUJN2undjnjww,dWJnjndw")
+     print("JNWEJDN7hbchjbIWHUnk3hnbunhOIEWHO*H#IJnkj")
+     print("WMNDOU#omoeicjo8jewD465463516#WD454dwda@f")
+     print("KLWJNUnhi39jd993inJN#(@(JNkjfnkjenloKMkmw")
+     print("KIMWKJLDNKNoujkj3n kjJOJD)jOIn34fo@JDOJnd")
+     print("-------------END_MEMORY_DUMP-------------")
+     print("MESG:PLEASE CONTACT SYSTEM ADMINISTRATOR FOR MORE ASSISTANCE")
+     print("############################################")
+     print("\nThis system is unaccessable to protect from further damage.")
+     print("Enter your emergency overide code below to start repairs.")
+     print("Please contact your security administrator for more info.")
+     return
+
+def corp():
+    print("ATTENTION:")
+    print("This command is currently unavailable due to system corruption.")
+    print("Contact your system administrator for assistance.")
+    return
+
+def syss():
+    clear()
+    end=False
+    lpass=False
+    print("############################################")
+    print("                FROM .BASH")
+    print("Starting...")
+    var1='Accessing validated system image(C:/SYS/BACKUP)...'
+    ltime=20
+    end=True
+    load(var1, suc, ltime, end, lpass)
+    end=False
+    print("Shutting down all non-essental processes...")
+    var1='#Ending terminal session...'
+    ltime=20
+    load(var1, suc, ltime, end, lpass)
+    var1='#Terminating connections....'
+    ltime=30
+    load(var1, suc, ltime, end, lpass)
+    var1='#Ending G.U.Is(Graphical User Interface)...'
+    ltime=40
+    load(var1, suc, ltime, end, lpass)
+    var1='#Ending misc. processes...'
+    ltime=50
+    end=True
+    load(var1, suc, ltime, end, lpass)
+    var1='Unmounting Local drive(C:)...'
+    ltime=50
+    load(var1, suc, ltime, end, lpass)
+    print("Complete.")
+    print("############################################")
+    print("(END SYSCHECK.SH)")
+    time.sleep(1)
+    return
+
+def syscheck():
+    clear()
+    end=False
+    lpass=True
+    print("############################################")
+    print("System File Checker ver. 3.23.1")
+    print("@1987 All rights reserved ENTech LLC.\n")
+    print("Diagnossing...")
+    print("Hardware Diagnostics...")
+    var1='#Disk test...'
+    ltime=20
+    load(var1, suc, ltime, end, lpass)
+    var1='#RAM test...'
+    ltime=10
+    load(var1, suc, ltime, end, lpass)
+    var1='#CPU test...'
+    ltime=30
+    load(var1, suc, ltime, end, lpass)
+    lpass=False
+    var1='Circut connectivity test...'
+    ltime=1
+    load(var1, suc, ltime, end, lpass)
+    lpass=True
+    var1='#Loop 1...'
+    ltime=20
+    load(var1, suc, ltime, end, lpass)
+    var1='#Loop 2...'
+    ltime=30
+    load(var1, suc, ltime, end, lpass)
+    var1='Loop 3...'
+    ltime=10
+    end=True
+    load(var1, suc, ltime, end, lpass)
+    print("Hardware Diagnostics completed with:\n#0 Errors")
+    print("Software Diagnostics...")
+    var1='Checking system image...'
+    ltime=70
+    loadff()
+    print("\nErrors found:")
+    print("Memory leakage. Code: 0x00491")
+    print("Begening repair...")
+    print("Reinstalling system(THIS WILL TAKE A WHILE)...")
+    end=False
+    lpass=False
+    var1="#0%"
+    ltime=20
+    load(var1, suc, ltime, end, lpass)
+    var1="#10%"
+    ltime=30
+    load(var1, suc, ltime, end, lpass)
+    var1="#20%"
+    ltime=10
+    load(var1, suc, ltime, end, lpass)
+    var1="#30%"
+    ltime=40
+    load(var1, suc, ltime, end, lpass)
+    var1="#40%"
+    ltime=10
+    load(var1, suc, ltime, end, lpass)
+    var1="#50%"
+    ltime=10
+    load(var1, suc, ltime, end, lpass)
+    var1="#60%"
+    ltime=50
+    load(var1, suc, ltime, end, lpass)
+    var1="#70%"
+    ltime=20
+    load(var1, suc, ltime, end, lpass)
+    var1="#80%"
+    ltime=30
+    load(var1, suc, ltime, end, lpass)
+    var1="#90%"
+    ltime=40
+    load(var1, suc, ltime, end, lpass)
+    print("#100%")
+    print(suc)
+    print("System has been repaired. This system will now reboot.")
+    print("############################################")
+    print("(END SYSCHECK.SH)")
+    time.sleep(1)
+    os.system("color 0a")
+    return
+
+def loggh():
+    print("###########################################")
+    print("Logg collection help:")
+    print("\n'log_enable' to enable system wide log collection.")
+    print("\n'log_disable' to disable system wide log collection.")
+    print("\n'log' to see this message")
+    print("###########################################")
+    print("What is a log?")
+    print("A log is a collection of all inputs and commands inputed on a system.")
+    print("Any input and command WILL be inputed to the LOG.txt file.")
+    print("Please be aware that this is a MAJOR SECURITY RISK.")
+    print("Passwords can be STOLEN this way, so please be carefull.")
+    print("Contact your system administrator for more info.")
+    print("AND PLEASE RESPECT THE PRIVACY OF YOUR PEERS!")
+    print("###########################################")
+    return
+
+def logstart(logf):
+    logf.write("    ")
+    return
+
 def clear():
     os.system('cls' if os.name == 'nt' else 'clear')
     return
