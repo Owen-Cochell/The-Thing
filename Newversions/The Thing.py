@@ -155,7 +155,7 @@ while on==True:
         startt(usern)
         while interm==True:
             inp=input("C:/Users/%s>>>" % usern)
-            if log=True:
+            if log==True:
                 logf=open("C:\\Users\\Owen\\Desktop\\The-Thing-master\\Newversions\\LOG.txt", "a")
                 logf.write("\n#USER.{}.TYPE: {}".format(usern, inp))
                 logf.close
