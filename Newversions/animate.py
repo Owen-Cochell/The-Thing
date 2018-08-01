@@ -252,14 +252,297 @@ def files(suc):
     time.sleep(1)
     return
     
-def file():
-    print("###########################################")
-    print("File Manager System ver. 1.74.52")
-    print("@1987 All rights reserved ENTech LLC.\n")
-    print("Welcome to File Manager!")
-    print("Below are files that can be veiwed. Enter the file number to view it.")
-    print("'.txt' files can be veiwed, but '.enc' are encrypted and can't be viewed without decrypting them first\n")
-    return
+def file(bio, wep, pio, tec, biop, wepp, piop, tecp, biopl, weppl, piopl, tecpl, logpass, emover, freq):
+    while True:
+        clear()
+        print("###########################################")
+        print("File Manager System ver. 1.74.52")
+        print("@1987 All rights reserved ENTech LLC.\n")
+        print("Welcome to File Manager!")
+        print("Below are files that can be veiwed. Enter the file number to view it.")
+        print("'.txt' files can be veiwed, but '.enc' are encrypted and can't be viewed without decrypting them first\n")
+        print("\nPlease select a directory to view:")
+        print("1. SYSTEM_LOGS")
+        print("2. AUDIO_LOGS")
+        print("3. User-Logs")
+        print("4. Quit")
+        fiinp=input(">>")
+        if fiinp=='SYSTEM_LOGS':
+            clear()
+            print("###########################################")
+            print("SYSTEM_LOGS")
+            print("Type 'back' to return to previous directory")
+            print("Files:")
+            print("\n1. LOG_1.txt")
+            print("2. LOG_2.enc")
+            print("3. LOG_3.txt\n")
+            fiinp=input(">>")
+            if fiinp=='LOG_1.txt':
+                print("\n########################<<SYSTEM_LOG>>#######################")
+                print("time: 07:78:91")
+                print("Date: 10/3/1986")
+                print("#################################")
+                print("#TYPE: {}".format(bio))
+                print("#TYPE: {}".format(biop))
+                print("#SYSTEM: Setting user to --> {}".format(bio))
+                print("#SYSTEM: Starting login procedure...")
+                print("#SYSTEM: Login procedure complete!")
+                print("#USER.{}.TYPE: notepad".format(bio))
+                print("#SYSTEM: Starting notepad.sh...")
+                print("#SYSTEM: Started notepad.sh!")
+                print("#SYSTEM: Saved file as --> GENOME_MATCHER.SH")
+                print("#USER.{}.TYPE: GENOME_MATCHER".format(bio))
+                print("#SYSTEM: Starting GENOME_MATCHER.SH...")
+                print("#SYSTEM.WARNING: FILE(GENOME_MATCHER.SH) HAS FAILED INTEGRETY CHECK!")
+                print("#SYSTEM.WARNING: RUNNING THIS FILE IS NOT RECOMMENDED!")
+                print("#SYSTEM.WARNING: Displaying warning message...")
+                print("#USER.{}.TYPE: y".format(bio))
+                print("#SYSTEM: Ignoring unstable files...")
+                print("#SYSTEM: Starting GENOME_MATCHER.sh...")
+                print("#SYSTEM.ERROR: BAD_VARIABLE")
+                print("#SYSTEM.ERROR: BAD_VARIABLE")
+                print("#SYSTEM.ERROR: BAD_VARIABLE")
+                print("#SYSTEM: (Surpressing identical messages)")
+                print("#SYSTEM.WARNING: SYSTEM_FAILSAFE ACTIVATED!")
+                print("#SYSTEM.WARNING: Restarting...")
+                print("#######################<<END_SYSTEM_LOG>>########################")
+                x=input("\nPress any key to continue...")
+                continue
+            if fiinp=='LOG_2.enc':
+                print("This file requires a password to open:")
+                lopass=input("\nPassword:")
+                if lopass==logpass:
+                    print("\n##############################<<SYSTEM_LOG>>#################################")
+                    print("Time: 09:24:37")
+                    print("Date: 10/3/1986")
+                    print("####################################")
+                    print("#SYSTEM: Starting boot procedures...")
+                    print("#SYSTEM: Boot procedures complete!")
+                    print("#SYSTEM.ERROR: ERRORS DETECTED! Booting to FAILSAFE_PARTITION....")
+                    print("#SYSTEM: Booted to FAILSAFE_PARTITION!")
+                    print("#TYPE: {}".format(emover))
+                    print("#SYSTEM: Authenticating...")
+                    print("#SYSTEM: Authenticated!")
+                    print("#SYSTEM: Loggining into {}...".format(tec))
+                    print("#SYSTEM: Logged into {} account!".format(tec))
+                    print("#USER.{}.TYPE: syscheck".format(tec))
+                    print("#SYSTEM: Starting SYSCHECK.sh...")
+                    print("#SYSTEM: Started SYSCHECK.sh!")
+                    print("#USER.{}.TYPE: y".format(tec))
+                    print("#SYSTEM: Handing all services to 'SYSCHECK.SH'...")
+                    print("#SYSTEM: Released system to 'SYSCHECK.sh'!(logg collection might be disabled for a short while)")
+                    print("#SYSTEM: Rebooting...")
+                    print("##########################<<END_SYSTEM_LOG>>###################################")
+                    x=input("\nPress any key to continue...")
+                    continue
+                else:
+                    print("Incorrect password.")
+                    x=input("\nPress any key to continue...")
+                    continue
+            if fiinp=='LOG_3.txt':
+                print("\n##############################<<SYSTEM_LOG>>#################################")
+                print("Time: 29:48:17")
+                print("Date: 2/3/1986")
+                print("####################################")
+                print("#SYSTEM: Enabling log collection...")
+                print("#SYSTEM: Log collection enabled!")
+                print("#USER.{}.TYPE: logout".format(wep))
+                print("#SYSTEM: Logging out...")
+                print("#SYSTEM: Setting user to --> NULL")
+                print("#SYSTEM: Loading login_screen...")
+                print("#SYSTEM: Loaded login_screen!")
+                print("#TYPE: {}".format(tec))
+                print("#TYPE: {}".format(tecp))
+                print("#SYSTEM: Setting user to --> bio")
+                print("#SYSTEM: Starting login procedure...")
+                print("#SYSTEM: Login procedure complete!")
+                print("#USER.{}.TYPE: file".format(tec))
+                print("#SYSTEM: Starting 'FILE.SH'...")
+                print("#SYSTEM: Started 'FILE.SH'!")
+                print("#USER.{}.TYPE: User-Logs".format(tec))
+                print("#USER.{}.TYPE: tec-Log.enc".format(tec))
+                print("#SYSTEM: Password requried. Prompting...")
+                print("#USER.{}.TYPE: {}".format(tec, tecpl))
+                print("#USER.{}.TYPE: Quit".format(tec))
+                print("#USER.{}.TYPE: log_disable".format(tec))
+                print("#SYSTEM: Disabling log collection...")
+                print("#SYSTEM: Disabled log collection!")
+                print("########################<<END_SYSTEM_LOG>>####################################")
+                x=input("\nPress any key to continue...")
+                continue
+            
+            if fiinp=='back':
+                continue
+            else:
+                print("Invalid file.")
+                x=input("Press any key to continue...")
+                continue
+        if fiinp=='AUDIO_LOGS':
+            clear()
+            print("###########################################")
+            print("AUDIO_LOGS")
+            print("Type 'back' to return to previous directory")
+            print("Files:")
+            print("\n1. AUDIO_LOG_1.txt")
+            print("2. AUDIO_LOG_2.txt")
+            print("3. AUDIO_LOG_3.txt")
+            fiinp=input(">>")
+            if fiinp=='AUDIO_LOG_1.txt':
+                print("\n####################<<BEGIN_AUDIO_LOG>>##########################")
+                print("Time: 14:38:34")
+                print("Date: 10/2/1986")
+                print("#####################################")
+                print("#VOICE.1: Hey {}".format(tec))
+                print("#VOICE.2: What?")
+                print("#VOICE.1: What's the [REDACATED] for the [REDACATED]?")
+                print("#VOICE.2: Oh, it's {} gigahertz".format(freq))
+                print("#VOICE.1: Thanks.")
+                print("#################<<END_AUDIO_LOG>>###############################")
+                x=input("\nPress any key to continue...")
+                continue
+            if fiinp=='AUDIO_LOG_2.txt':
+                print("\n####################<<BEGIN_AUDIO_LOG>>##########################")
+                print("Time: 12:48:64")
+                print("Date: 10/4/1986")
+                print("#####################################")
+                print("VOICE.1: {}!".format(tec))
+                print("VOICE.2: What is it, {}?".format(bio))
+                print("VOICE.1: What the hell are you listing to?")
+                print("VOICE.2: My favorite song, let's do the time warp again.")
+                print("VOICE.1: Is that the only song you have on your playlist?")
+                print("VOICE.2: Yes.")
+                print("VOICE.1: Turn that shit off! It's very unsophistucated!")
+                print("<SPEAKER_VOlUME_INCREACE>")
+                print("VOICE.1: [REDACATED]!")
+                print("##################<<END_AUDIO_LOG>>#############################")
+                x=input("\nPress any key to continue...")
+                continue
+            if fiinp=='AUDIO_LOG_3.txt':
+                print("\n####################<<BEGIN_AUDIO_LOG>>##########################")
+                print("Time: 15:56:24")
+                print("Date: 10/5/1986")
+                print("#####################################")
+                print("#VOICE.1: Holy shit, {}! What the hell is that?".format(pio))
+                print("#VOICE.2: Don't know. Found it at the site. With the distress beacon.")
+                print("#VOICE.3: What...")
+                print("#VOICE.4: DON't TOUCH it! Do you know how many safety prodocals we are breaking?")
+                print("#VOICE.2: Relax, {}. I just thought {} would like to have a look at it.".format(wep, bio))
+                print("#VOICE.3: You assumed correctly. Let's take a gander...")
+                print("<No voice captures detected for 3 minutes>")
+                print("#VOICE.3: Well, by the looks of it, it's obviously a [REDICATED].")
+                print("#VOICE.4: What the hell is that supposed to mean?")
+                print("#VOICE.3: It has [REDICATED] amount of [REDICATED]. Very uncanny biology. Never seen anything like this before...")
+                print("#VOICE.1: English, {}.".format(bio))
+                print("#VOICE.3: This thing's not from around here. None of these organs seem to [REDICATED].")
+                print("#VOCIE.4: We need to keep an eye on this, thing, and report it to HQ.")
+                print("#VOICE.1 Roger. I'll get to it.")
+                print("#VOICE.4: {}}, keep this thing in the freezer until further notice.".format(bio))
+                print("#VOICE.3: Roger that, {}.".format(wep))
+                print("####################<<END_AUDIO_LOG>>###########################")
+                x=input("\nPress any key to continue...")
+                continue
+            if fiinp=='back':
+                continue
+            else:
+                print("Invalid file.")
+                x=input("\nPress any key to continue...")
+                continue
+        if fiinp=='User-Logs':
+            clear()
+            print("###########################################")
+            print("User-Logs")
+            print("Type 'back' to return to previous directory")
+            print("Files:")
+            print("\n1. {}-Log.enc".format(bio))
+            print("2. {}-Log.txt".format(pio))
+            print("3. {}-Log.enc".format(wep))
+            print("4. {}-Log.enc".format(tec))
+            fiinp=input(">>")
+            if fiinp==bio + '-Log.enc':
+                print("This file requires a password to open:")
+                lopass=input("\nPassword:")
+                if lopass==biopl:
+                    print("\n########################################################")
+                    print("Secure log system ver 3.24.8:")
+                    print("(DATE AND TIME DISABLED)\n")
+                    print("ENTRY 1:\n")
+                    print("    This is {}, head biologyst of Outpost 41. This place seems, quiet. I'm not gonna be doing much around here besides checking the samples in the freezer. Gonna be a hellava boring 9 months. at least I have this computer to write down my thoughts.\n".format(bio))
+                    print("ENTRY 2:\n")
+                    print("    I hate {}. He's an annoying piece of shit. He keeps 'messing around' with my logs, and constantly screws up the testing environment. He compromised 3 microganism colonies already! And he keeps playing that same, goddamn song. Jesus, if I have to put up with his shit much longer, i'll take my chances out in the frozen wasteland. Better than being copped up with {}.\n".format(tec, tec))
+                    print("ENTRY 3:\n")
+                    print("    We found... something. {} came back from a scouting mission investigating another research outpost emitting a distress call. He found this... strange lifeform. It appears to have human organs, but dose not appear to be human. It has mutiple limbs(perhapps 'appendages' would be more accurate), and appears, to have... dog fur. Also, upon further genetic testing, I found that some cells are still alive. They are in some form of hibernation, most likely from the cold. I saved a few samples for analysis. Perhapps this will give me something to pass the time.\n".format(pio))
+                    print("########################################################")
+                    x=input("\nPress any key to continue...")
+                    continue
+                else:
+                    print("Incorrect password.")
+                    x=input("\nPress any key to continue...")
+                    continue
+            if fiinp==pio + '-Log.txt':
+                print("\n########################################################")
+                print("Secure log system ver 3.24.8")
+                print("(DATE AND TIME DISABLED)\n")
+                print("ENTRY 1:\n")
+                print("    This is stupid. I'm not using this shit.\n")
+                print("########################################################")
+                x=input("\nPress any key to continue...")
+                continue
+            if fiinp==wep + '-Log.enc':
+                print("This file requires a password to open:")
+                lopass=input("\nPassword:")
+                if lopass==weppl:
+                    print("\n########################################################")
+                    print("Secure log system ver 3.24.8")
+                    print("(DATE AND TIME DISABLED)\n")
+                    print("ENTRY 1:\n")
+                    print("    The men under my command are, well, interesting to say the least. They range from ignorant and immature, to arrogant and pompus. Keeping these men under control will be a challenge.\n")
+                    print("ENTRY 2:\n")
+                    print("    I need to find a safe place to keep my gun key. {} has been asking to distribute them, so the men can defend themselves in an emergency. I don't know what could possibly happen out here, but arming the entire staff of this facility is NOT a good idea.\n".format(pio))
+                    print("ENTRY 3:\n")
+                    print("    I took the liberty of securing logs with sensitive info inside. Don't want my boys to get into something they shouldn't be seeing. For future refrence, the password is: {}.\n".format(logpass))
+                    print("ENTRY 4:\n")
+                    print("    {} brought back something interesting from his scouting mission. According to {}, it's a lifeform hes never seen before. Well, it disappeared from the freezer. We found it outside the facility, crawling around. It seemed like it didn't know how to use it's body, like it was still learning. It was stumbling around and falling over its self. We torched it. It died immediatly. Everyone is on edge now, nobody knows what to think anymore.\n".format(pio, bio))
+                    print("########################################################")
+                    x=input("\nPress any key to continue...")
+                    continue
+                else:
+                    print("Incorrect password.")
+                    x=input("\nPress any key to continue...")
+                    continue
+            if fiinp==tec + '-Log.enc':
+                print("This file requires a password to open:")
+                lopass=input("\nPassword:")
+                if lopass==tecpl:
+                    print("\n########################################################")
+                    print("Secure log system ver 3.24.8")
+                    print("(DATE AND TIME DISABLED)\n")
+                    print("ENTRY 1:\n")
+                    print("	Wow. A shitty journal app on a shitty computer in a shitty outpost in the middle of fucking nowhere. This is gonna be the most boring job yet. And that's saying something! You shoulda seen it when I was the system administrator for some company I was working with. All I did was change the ink on the photo copier. Now, i'm gonna be using this computer system to manage an outpost with litle to no intrest to anybody at D.C. Woopie.\n")
+                    print("ENTRY 2:\n")
+                    print("	Goddamn it, little bastards are smarter than I thought. {}, the biologist, somehow managed to figure out how to make scripts with 'notepad.sh'. Unfortunatly, he has no idea what he's doing. His app isn't correctly compiled, which leads to memory leakedge from invalid variables created by the script. He crashed the whole system. Had to do a complete reinstall. It's a wonder that I was able to recover all of our data. Gonna have to tighten up security on P.E.E(Protected Execution Environment. A unfortunate nickname, I know), disable 'notepad.sh', and give a stern talking to to {}. Little shit managed to waste a good 4 hours of my time.\n".format(bio, bio))
+                    print("ENTRY 3:\n")
+                    print("	They did it again. {} somehow managed to get in my account, enable log collection, and get the credentls to unlock most of the encrypted documents. I am guessing he just wanted to keep a better eye on us. A little tyranical though, don't you think? I mean, I know he's the boss and all, but dosen't he have any respect for privacy? Anyway, I disabled log collection on the files app and restricted log control to my account. But not before I get some passwords for payback ;)\n".format(wep))
+                    print("ENTRY 4:\n")
+                    print("	List of log credentials:")
+                    print("	#pio:N/A")
+                    print("	#wep: {}".format(weppl))
+                    print("	#bio: {}\n".format(biopl))
+                    print("ENTRY 5:\n")
+                    print("	So I managed to make a music player for the guys. They like the fact that they can play their own songs. Thought it would boost moral a bit.\n")
+                    print("ENTRY 6:\n")
+                    print("	OH SHIT OH GOD HOLY FUCK I WENt IntO THE FREEZER AND IT WAS GONE! THE FUCKINg BODY IS FUCKINg gONE!!! HOLY SHIt I thOUGHT IT WAS DEAD... I gotta tell somebody about this...\n")
+                    print("##################################################")
+                else:
+                    print("Incorrect password.")
+                    x=input("\nPress any key to continue...")
+                    continue
+            if fiinp=='back':
+                continue
+        if fiinp=='Quit':
+            print("Exiting...")
+            time.sleep(1)
+            return
+    
 
 def uinfo(usern, logg, tec, bio, pio, wep):
     print("#####################################")
@@ -289,9 +572,9 @@ def uinfo(usern, logg, tec, bio, pio, wep):
     print("#####################################")
     return
     
-def terror(inp, log):
+def terror(inp, log, path):
     if log==True:
-        logf=open("C:\\Users\\Owen\\Desktop\\The-Thing-master\\Newversions\\LOG.txt", "a")
+        logf=open(path, "a")
         logf.write("\n#SYSTEM: Invalid command!")
         logf.close()
     print("Error:\n#'%s' is not a valid command!" % inp)
@@ -700,7 +983,7 @@ def radios(suc):
     time.sleep(1)
     return
 
-def radio(freq, optiony, optionn, log, usern):
+def radio(freq, optiony, optionn, log, usern, path):
     print("############################################")
     print("Radio Interface System ver. 3.3.8")
     print("@1986 All Rights Reserved ENTech LLC.")
@@ -709,7 +992,7 @@ def radio(freq, optiony, optionn, log, usern):
     freqinp=input("Enter a frequency:")
     if freqinp==freq:
         if log==True:
-            logf=open("C:\\Users\\Owen\\Desktop\\The-Thing-master\\Newversions\\LOG.txt", "a")
+            logf=open(path, "a")
             logf.write("\n#USER.{}.TYPE: {}".format(usern, freqinp))
             logf.write("\n#SYSTEM: Signal accuired!")
             logf.close()
@@ -723,7 +1006,7 @@ def radio(freq, optiony, optionn, log, usern):
         sosinp=input("(Y/N):")
         if sosinp in optiony:
             if log==True:
-                logf=open("C:\\Users\\Owen\\Desktop\\The-Thing-master\\Newversions\\LOG.txt", "a")
+                logf=open(path, "a")
                 logf.write("\n#USER.{}.TYPE: {}".format(usern, sosinp))
                 logf.write("\n#SYSTEM: Broadcasting SOS alert...")
                 logf.write("\n#SYSTEM: Accuired response!")
@@ -764,7 +1047,7 @@ def radio(freq, optiony, optionn, log, usern):
             
         if sosinp in optionn:
             if log==True:
-                logf=open("C:\\Users\\Owen\\Desktop\\The-Thing-master\\Newversions\\LOG.txt", "a")
+                logf=open(path, "a")
                 logf.write("\n#USER.{}.TYPE: {}".format(usern, sosinp))
                 logf.write("\n#SYSTEM: Exiting 'RADIO.SH'...")
                 logf.close()
@@ -774,7 +1057,7 @@ def radio(freq, optiony, optionn, log, usern):
             return
     else:
         if log==True:
-            logf=open("C:\\Users\\Owen\\Desktop\\The-Thing-master\\Newversions\\LOG.txt", "a")
+            logf=open(path, "a")
             logf.write("\n#USER.{}.TYPE: {}".format(usern, sosinp))
             logf.write("\n#SYSTEM: No signals found.")
             logf.write("\n#SYSTEM: Exiting 'RADIO.SH'...")
