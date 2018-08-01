@@ -6,9 +6,10 @@ import itertools
 import threading
 import sys
 os.system("color 0a")
-logf=open("C:\\Users\\Owen\\Desktop\\The-Thing-master\\Newversions\\LOG.txt", "w")
+path= 'system path here'
+logf=open(path, "w")
 logstart(logf)
-logf=open("C:\\Users\\Owen\\Desktop\\The-Thing-master\\Newversions\\LOG.txt", "a")
+logf=open(path, "a")
 logf.write("#######################################################################")
 logf.write("\n                            <BEGIN_LOG>                             ")
 logf.close()
@@ -24,7 +25,9 @@ log=True
 temp=20
 corrupt=False
 #Code for frequency here
+freq='2500'
 #Code for emergency overide code here
+logpass='test'
 emover='0x5567'
 tec='Windows'
 pio='Mcrege'
@@ -34,20 +37,30 @@ tecp='test'
 piop='test'
 wepp='test'
 biop='test'
+tecpl='test'
+piopl='test'
+weppl='test'
+biopl='test'
+
 optiony = ('Y', 'y', 'Yes', 'yes', 'Ye', 'ye')
 optionn = ('N', 'n', 'No', 'no')
 
 while on==True:
     #Boot up procedure
     if log==True:
-        logf=open("C:\\Users\\Owen\\Desktop\\The-Thing-master\\Newversions\\LOG.txt", "a")
+        logf=open(path, "a")
         logf.write("\n#SYSTEM: Starting boot procedures...")
         logf.write("\n#SYSTEM: Boot procedure complete!")
+        logf.close()
     clear()
     boot(suc, corrupt)
     #Check to see which version to boot
     while norm==False:
         while lockconf==True:
+            if log==True:
+                logf=open(path, "a")
+                logf.write("\n#SYSTEM.WARNING: LOG COLLECTION TEMPORARILY DISABLED DUE TO SECURITY PROTOCALS!")
+                logf.close()
             clear()
             lockout()
             lockinp=input("Please enter password or security overide code:")
@@ -95,6 +108,16 @@ while on==True:
                 usern=tec
                 authe=True
                 interm=True
+                if log==True:
+                    logf=open(path, "a")
+                    logf.write("\n#SYSTEM.ERROR: ERRORS DETECTED! Booting to FAILSAFE_PARTITION....")
+                    logf.write("\n#SYSTEM: Booted to FAILSAFE_PARTITION!")
+                    logf.write("\n#TYPE: {}".format(corpinp))
+                    logf.write("\n#SYSTEM: Authenticating...")
+                    logf.write("\n#SYSTEM: Authenticated!")
+                    logf.write("\n#SYSTEM: Loggining into tec...")
+                    logf.write("\n#SYSTEM: Logged into tec!")
+                    logf.close()
                 break
             else:
                 clear()
@@ -107,7 +130,7 @@ while on==True:
         #Usernames and passwords
         while authe==False:
             if log==True:
-                logf=open("C:\\Users\\Owen\\Desktop\\The-Thing-master\\Newversions\\LOG.txt", "a")
+                logf=open(path, "a")
                 logf.write("\n#SYSTEM: Loading Login_Screen...")
                 logf.write("\n#SYSTEM: Loaded Login_screen!")
                 logf.close()
@@ -126,10 +149,10 @@ while on==True:
                 authe=True
             if authe==False:
                 if log==True:
-                    logf=open("C:\\Users\\Owen\\Desktop\\The-Thing-master\\Newversions\\LOG.txt", "a")
+                    logf=open(path, "a")
                     logf.write("\n#TYPE: {}".format(usern))
                     logf.write("\n#TYPE: {}".format(passw))
-                    logf.write("\n#SYSTEM: Incorrect login credentials!")
+                    logf.write("\n#SYSTEM.ERROR: Incorrect login credentials!")
                     logf.close()
                 clear()
                 print("Error: \n#Incorect Username/Password!")
@@ -137,7 +160,7 @@ while on==True:
                 continue
             if authe==True:
                 if log==True:
-                    logf=open("C:\\Users\\Owen\\Desktop\\The-Thing-master\\Newversions\\LOG.txt", "a")
+                    logf=open(path, "a")
                     logf.write("\n#TYPE: {}".format(usern))
                     logf.write("\n#TYPE: {}".format(passw))
                     logf.write("\n#SYSTEM: Credentials accepted!")
@@ -156,12 +179,12 @@ while on==True:
         while interm==True:
             inp=input("C:/Users/%s>>>" % usern)
             if log==True:
-                logf=open("C:\\Users\\Owen\\Desktop\\The-Thing-master\\Newversions\\LOG.txt", "a")
+                logf=open(path, "a")
                 logf.write("\n#USER.{}.TYPE: {}".format(usern, inp))
                 logf.close
             if inp=='help':
                 if logf==True:
-                    logf=open("C:\\Users\\Owen\\Desktop\\The-Thing-master\\Newversions\\LOG.txt", "a")
+                    logf=open(path, "a")
                     logf.write("\n#SYSTEM: Loading help_menu...")
                     logf.write("\n#SYSTEM: Loaded help_menu!")
                     logf.close
@@ -170,13 +193,13 @@ while on==True:
             if inp=='logout':
                 if corrupt==True:
                     if log==True:
-                        logf=open("C:\\Users\\Owen\\Desktop\\The-Thing-master\\Newversions\\LOG.txt", "a")
+                        logf=open(path, "a")
                         logf.write("\n#SYSTEM.ERROR: 'LOGOUT.SH' not found :(")
                         logf.close()
                     corp()
                     continue
                 if log==True:
-                    logf=open("C:\\Users\\Owen\\Desktop\\The-Thing-master\\Newversions\\LOG.txt", "a")
+                    logf=open(path, "a")
                     logf.write("#SYSTEM: Logging out...")
                     logf.write("#SYSTEM: Setting user to --> NULL")
                     logf.write("#SYSTEM: Loading login_screen...")
@@ -192,13 +215,13 @@ while on==True:
             if inp=='music':
                 if corrupt==True:
                     if log==True:
-                        logf=open("C:\\Users\\Owen\\Desktop\\The-Thing-master\\Newversions\\LOG.txt", "a")
+                        logf=open(path, "a")
                         logf.write("\n#SYSTEM.ERROR: 'MUSIC.SH' not found :(")
                         logf.close()
                     corp()
                     continue
                 if log==True:
-                    logf=open("C:\\Users\\Owen\\Desktop\\The-Thing-master\\Newversions\\LOG.txt", "a")
+                    logf=open(path, "a")
                     logf.write("\n#SYSTEM: Loading 'MUSIC.SH'...")
                     logf.write("\n#SYSTEM: Loaded 'MUSIC.SH'!")
                     logf.write("\n#SYSTEM.WARNING: 'MUSIC.SH' dose not support log collection. Any input/system event will NOT be recorded!")
@@ -229,13 +252,13 @@ while on==True:
             if inp=='file':
                 if corrupt==True:
                     if log==True:
-                        logf=open("C:\\Users\\Owen\\Desktop\\The-Thing-master\\Newversions\\LOG.txt", "a")
+                        logf=open(path, "a")
                         logf.write("\n#SYSTEM.ERROR: 'FILE.SH' not found :(")
                         logf.close()
                     corp()
                     continue
                 if log==True:
-                    logf=open("C:\\Users\\Owen\\Desktop\\The-Thing-master\\Newversions\\LOG.txt", "a")
+                    logf=open(path, "a")
                     logf.write("\n#SYSTEM: Loading 'FILE.SH'...")
                     logf.write("\n#SYSTEM: Loaded 'FILE.SH'!")
                     logf.write("\n#SYSTEM.WARNING: Log collection disbled by administrator on 'FILE.SH'.")
@@ -246,20 +269,20 @@ while on==True:
                 clear()
                 files(suc)
                 clear()
-                file()
+                file(bio, wep, pio, tec, biop, wepp, piop, tecp, biopl, weppl, piopl, tecpl, logpass, emover, freq)
                 print("No files yet at this time")
                 fileinp=("Please enter a file number here:")
                 continue
             if inp=='radio':
                 if corrupt==True:
                     if log==True:
-                        logf=open("C:\\Users\\Owen\\Desktop\\The-Thing-master\\Newversions\\LOG.txt", "a")
+                        logf=open(path, "a")
                         logf.write("\n#SYSTEM.ERROR: 'RADIO.SH' not found :(")
                         logf.close()
                     corp()
                     continue
                 if log==True:
-                    logf=open("C:\\Users\\Owen\\Desktop\\The-Thing-master\\Newversions\\LOG.txt", "a")
+                    logf=open(path, "a")
                     logf.write("\n#SYSTEM: Loading 'RADIO.SH'...")
                     logf.write("\n#SYSTEM: Loaded 'RADIO.SH'!")
                     logf.close()
@@ -269,11 +292,11 @@ while on==True:
                 clear()
                 radios(suc)
                 clear()
-                radio(freq, optiony, optionn, log, usern)
+                radio(freq, optiony, optionn, log, usern, path)
                 continue
             if inp=='info':
                 if log==True:
-                    logf=open("C:\\Users\\Owen\\Desktop\\The-Thing-master\\Newversions\\LOG.txt", "a")
+                    logf=open(path, "a")
                     logf.write("\n#SYSTEM: Displaying account_info.")
                     logf.close()
                 print("This feature is under development.")
@@ -281,17 +304,25 @@ while on==True:
                 continue
             if inp=='clear':
                 if log==True:
-                    logf=open("C:\\Users\\Owen\\Desktop\\The-Thing-master\\Newversions\\LOG.txt", "a")
+                    logf=open(path, "a")
                     logf.write("\n#SYSTEM: Clearing screen...")
                     logf.close
                 clear()
                 continue
             if inp=='lockdown':
                 if usern==wep:
+                    if log==True:
+                        logf=open(path, "a")
+                        logf.write("\n#SYSTEM: Displaying LOCKDOWN_HELP")
+                        logf.close()
                     lockinfo()
                     continue
                 else:
-                    terror(inp, log)
+                    if log==True:
+                        logf=open(path, "a")
+                        logf.write("\n#SYSTEM.ERROR: {} is not a valid command!".format(inp))
+                        logf.close()
+                    terror(inp, log, path)
                     continue
             if inp=='lockdown_int':
                 print("This feature is currently in development")
@@ -304,6 +335,12 @@ while on==True:
                         lockconf=True
                     if lockconfd in optionn:
                         lockconf=False
+                        if log==True:
+                            logf=open(path, "a")
+                            logf.write("\n#SYSTEM: Displaying lockdown_config")
+                            logf.write("\n#USER.{}.TYPE: {}".format(usern, lockpass))
+                            logf.write("\n#USER.{}.TYPE: {}".format(usern, lockconfd))
+                            logf.close()
                     if lockconf==True:
                         print("Starting 'LOCKDOWN.SH(C:/SYS/SECURITY)'...")
                         time.sleep(1)
@@ -312,6 +349,14 @@ while on==True:
                         norm=False
                         interm=False
                         auth=False
+                        if log==True:
+                            logf=open(path, "a")
+                            logf.write("\n#SYSTEM: Displaying lockdown_config")
+                            logf.write("\n#USER.{}.TYPE: {}".format(usern, lockpass))
+                            logf.write("\n#USER.{}.TYPE: {}".format(usern, lockconfd))
+                            logf.write("\n#SYSTEM: Starting 'LOCKDOWN.SH'...")
+                            logf.write("Rebooting...")
+                            logf.close()
                         continue
                     if lockconf==False:
                         continue
@@ -334,12 +379,37 @@ while on==True:
                         norm=False
                         corrupt=True
                         interm=False
+                        if log==True:
+                            logf=open(path, "a")
+                            logf.write("\n#SYSTEM: Starting GENOME_MATCHER.SH...")
+                            logf.write("\n#SYSTEM.WARNING: FILE(GENOME_MATCHER.SH) HAS FAILED INTEGRETY CHECK!")
+                            logf.write("\n#SYSTEM.WARNING: RUNNING THIS FILE IS NOT RECOMMENDED!")
+                            logf.write("\n#SYSTEM.WARNING: Displaying warning message...")
+                            logf.write("\n#USER.{}.TYPE: y".format(usern))
+                            logf.write("\n#SYSTEM: Ignoring unstable files...")
+                            logf.write("\n#SYSTEM: Starting GENOME_MATCHER.sh...")
+                            logf.write("\n#SYSTEM.ERROR: BAD_VARIABLE")
+                            logf.write("\n#SYSTEM.ERROR: BAD_VARIABLE")
+                            logf.write("\n#SYSTEM.ERROR: BAD_VARIABLE")
+                            logf.write("\n#SYSTEM: (Surpressing identical messages)")
+                            logf.write("\n#SYSTEM.WARNING: SYSTEM_FAILSAFE ACTIVATED!")
+                            logf.write("\n#SYSTEM.WARNING: Restarting...")
+                            logf.close()
                         continue
                     if gminp in optionn:
                         print("Exiting...")
+                        if log==True:
+                            logf=open(path, "a")
+                            logf.write("\n#SYSTEM: Starting GENOME_MATCHER.SH...")
+                            logf.write("\n#SYSTEM.WARNING: FILE(GENOME_MATCHER.SH) HAS FAILED INTEGRETY CHECK!")
+                            logf.write("\n#SYSTEM.WARNING: RUNNING THIS FILE IS NOT RECOMMENDED!")
+                            logf.write("\n#SYSTEM.WARNING: Displaying warning message...")
+                            logf.write("\n#USER.{}.TYPE: n".format(usern))
+                            logf.write("\n#SYSTEM: Canceling...")
+                            logf.close()
                         continue
                 else:
-                    terror(inp, log)
+                    terror(inp, log, path)
             if inp=='syscheck':
                 if usern==tec:
                     print("Are you sure you want to run a system integrety check?\n(THIS WILL TAKE A LONG TIME!)")
@@ -352,16 +422,58 @@ while on==True:
                         authe=False
                         interm=False
                         corrupt=False
+                        if log==True:
+                            logf=open(path, "a")
+                            logf.write("\n#SYSTEM: Starting SYSCHECK.sh...")
+                            logf.write("\n#SYSTEM: Started SYSCHECK.sh!")
+                            logf.write("\n#USER.{}.TYPE: {}".format(usern, checkinp))
+                            logf.write("\n#SYSTEM: Handing all services to 'SYSCHECK.SH'...")
+                            logf.write("\n#SYSTEM: Released system to 'SYSCHECK.sh'!(logg collection might be disabled for a short while)")
+                            logf.write("\n#SYSTEM: Rebooting...")
+                            logf.close()
                     if checkinp in optionn:
+                        if log==True:
+                            logf=open(path, "a")
+                            logf.write("\n#SYSTEM: Starting SYSCHECK.sh...")
+                            logf.write("\n#SYSTEM: Started SYSCHECK.sh!")
+                            logf.write("\n#USER.{}.TYPE: {}".format(usern, checkinp))
+                            logf.write("\n#SYSTEM: Canceling...")
+                            logf.close()
                         continue
                 else:
-                    terror(inp, log)
+                    terror(inp, log, path)
                     continue
             if inp=='log':
                 if usern==tec:
                     loggh()
                 else:
-                    terror(inp, log)
+                    terror(inp, log, path)
+                    continue
+            if inp=='log_enable':
+                if usern==tec:
+                    if log==True:
+                        logf=open(path, "a")
+                        logf.write("\n#SYSTEM: Enabling log collection...")
+                        logf.write("\n#SYSTEM: Log collection enabled!")
+                        logf.close()
+                    print("LOG COLLECTION ENABLED!")
+                    log=True
+                    continue
+                else:
+                    terror(inp, log, path)
+                    continue
+            if inp=='log_disable':
+                if usern==tec:
+                    if log==True:
+                        logf=open(path, "a")
+                        logf.write("\n#SYSTEM: Disabling log collection...")
+                        logf.write("\n#SYSTEM: Log collection disabled!")
+                        logf.close()
+                    print("LOG COLLECTION DISABLED!")
+                    log=False
+                    continue
+                else:
+                    terror(inp, log, path)
                     continue
             #ALL CODE BELOW IS UNFINISHED. MAY BE CHANGED IN THE FUTURE.
             #if inp=='fridge_config':
@@ -390,6 +502,7 @@ while on==True:
                 continue
             else:
                 terror(inp, log)
+                continue
                   
             
     
